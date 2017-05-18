@@ -10,9 +10,9 @@
 			}
 			$data['title'] = ucfirst($page);
 
-			//$this->load->view('template/header');
+			//$this->load->view('layout/header');
 			$this->load->view('dashboard/'.$page, $data);
-			//$this->load->view('template/footer');
+			//$this->load->view('layout/footer');
 		}
 	}
 ?>

@@ -4,7 +4,7 @@
 	*/
 	class Items extends CI_Controller
 	{
-		public function view($page = 'itemlist'){
+		public function index($page = 'itemlist'){
 			if(!file_exists(APPPATH.'views/items/'.$page.'.php')){
 				show_404();
 			}
