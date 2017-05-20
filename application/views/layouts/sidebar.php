@@ -25,7 +25,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header"><b>Stock Section</b></li>
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Items</span>
             <span class="pull-right-container">
@@ -33,7 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>items/items/view"><i class="fa fa-circle-o"></i>View Items</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>items/items/view"><i class="fa fa-circle-o"></i>View Items</a></li>
             <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Add Items</a></li>
           </ul>
         </li>
@@ -44,36 +44,42 @@
           <a href="#">
             <i class="fa fa-th"></i>
             <span>Debtors</span>
-      <span class="pull-right-container">
+             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
+             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> View Debtors</a></li>
             <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
-      </ul>
+           </ul>
         </li>
     
-        <li>
-          <a href="../widgets.html">
-            <i class="fa fa-th"></i> <span>Purchase Bills</span>
-      <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-        </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Purchase Receipts<span>
-            <span class="pull-right-container">
+            <i class="fa fa-th"></i>
+            <span>Purchase Bills</span>
+             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
+             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> View P-Receipts</a></li>
-            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Add P-Receipts</a></li>
-          </ul>
+            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> View Debtors</a></li>
+            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
+           </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-th"></i>
+            <span>Purchase Receipts</span>
+             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+             </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> View Debtors</a></li>
+            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
+           </ul>
         </li>
     
     <li class="header"><b>Sells Section</b></li>
