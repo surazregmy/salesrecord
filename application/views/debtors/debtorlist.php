@@ -26,19 +26,29 @@
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Items ID</th>
+                  <th>Debtors_ID</th>
                   <th>Name</th>
-                  <th>Category</th>
-                  <th>Quantity</th>
-                  <th>BP</th>
-                  <th>SP</th>
-                  <th>Discount</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>Address</th>
+                  <th>Contact</th>
                 </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
+                <?php foreach($debtors as $debtor): ?>
+                 <tr>
+                    <td><?php echo $item['id']; ?></td>
+                    <td><?php echo $item['name']; ?></td>
+                    <td><?php echo $item['address']; ?></td>
+                    <td> <?php echo $item['contact']; ?></td>
+                    
+                    <td><a href='items/edititem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
+                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    
+                  </tr>
+                <?php endforeach?>  
+=======
                   <p>This is the debtors list </p>
+>>>>>>> 3268068737593c398e86281ff747aaf9bebebce9
                 
               </table>
 
