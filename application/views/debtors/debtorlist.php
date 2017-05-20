@@ -33,6 +33,7 @@
                 </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                 <?php foreach($debtors as $debtor): ?>
                  <tr>
                     <td><?php echo $item['id']; ?></td>
@@ -45,6 +46,9 @@
                     
                   </tr>
                 <?php endforeach?>  
+=======
+                  <p>This is the debtors list </p>
+>>>>>>> 3268068737593c398e86281ff747aaf9bebebce9
                 
               </table>
 
