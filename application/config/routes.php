@@ -52,9 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome'; // default is not working 
 $route['dashboard/(:any)'] = 'dashboard/dashboard/$1';
 
+$route['debtors/view'] = 'debtors/debtors/view';
 $route['items/view'] = 'items/items/view';
 $route['items/additem'] = 'items/items/additem';
 $route['items/edititem/(:any)'] = 'items/items/edititem/$1';
-
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

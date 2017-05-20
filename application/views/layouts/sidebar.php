@@ -34,7 +34,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url(); ?>items/items/view"><i class="fa fa-circle-o"></i>View Items</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Add Items</a></li>
+            <li><a href="<?php echo base_url();?>items/items/additem"><i class="fa fa-circle-o"></i>Add Items</a></li>
           </ul>
         </li>
     
