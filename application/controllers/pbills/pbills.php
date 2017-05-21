@@ -22,9 +22,12 @@
 		}
 		public function addpbills(){
 
+			$data['debtors'] = $this->debtor_model->get_debtors();
+			$data['items'] = $this->item_model->get_items();
+			
 			$this->load->view('layouts/headh');
 			$this->load->view('layouts/sidebar');
-			$this->load->view('pbills/addpbills');
+			$this->load->view('pbills/addpbills',$data);
 			$this->load->view('layouts/pbill_footer');
 			
 		}

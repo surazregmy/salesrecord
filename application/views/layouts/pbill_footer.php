@@ -218,6 +218,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
 <!-- page script -->
+<!--Select2-->
+
+<script src="<?php echo base_url(); ?>assets/plugins/select2/select2.full.min.js"></script>
+
+
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -234,7 +239,8 @@
 
  <script type="text/javascript">
 
-  
+      $(".select2").select2();
+
       $(function(){
         $('#add').click(function(){  
             addnewrow();

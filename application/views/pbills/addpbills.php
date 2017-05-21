@@ -34,7 +34,13 @@
                   <label  class="col-sm-3 control-label">Debtors Name :</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="debtors_name">
+                    <select name = "debtor_id" class="form-control select2">
+                       <?php foreach($debtors as $debtor): ?>
+                                  <option value="<?php echo $debtor['id'] ?>"><?php echo $debtor['name'];?></option>
+                                  
+                        <?php endforeach ?>
+                    </select>
+
                   </div>
                 </div>
 
@@ -97,41 +103,37 @@
             </tr>
             </thead>
             <tbody class="detail">
+
             <tr>
               <td>1</td>
-              <td><input type="text"  name="items_name1" ></td>
+              <td>
+                   <select name = "item1" class="form-control select2" style="width: 100%;">
+                       <?php foreach($items as $item): ?>
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>
+                                  
+                        <?php endforeach ?>
+                    </select>
+              </td>
               <td><input type="text"  name="quantity1"></td>
               <td><input type="text"  name="rate1"></td>
               <td><input type="text"  name="total1"></td>
             </tr>
+
             <tr>
-              <td>2</td>
-              <td><input type="text"  name="items_name2" ></td>
-              <td><input type="text"  name="quantity2"></td>
-              <td><input type="text"  name="rate2"></td>
-              <td><input type="text"  name="total2"></td>
+              <td>1</td>
+              <td>
+                   <select name = "item2" class="form-control select2" style="width: 100%;">
+                       <?php foreach($items as $item): ?>
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>          
+                        <?php endforeach ?>
+                    </select>
+              </td>
+              <td><input type="text"  name="quantity1"></td>
+              <td><input type="text"  name="rate1"></td>
+              <td><input type="text"  name="total1"></td>
             </tr>
-            <tr>
-              <td>3</td>
-              <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text"  name="quantity3"></td>
-              <td><input type="text"  name="rate3"></td>
-              <td><input type="text"  name="total3"></td>
-            </tr>
-           <tr>
-              <td>4</td>
-              <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text"  name="quantity3"></td>
-              <td><input type="text"  name="rate3"></td>
-              <td><input type="text"  name="total3"></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text"  name="quantity3"></td>
-              <td><input type="text"  name="rate3"></td>
-              <td><input type="text"  name="total3"></td>
-            </tr>
+
+            
             </tbody>
           </table>
         </div>
