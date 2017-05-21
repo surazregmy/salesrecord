@@ -59,5 +59,7 @@ $route['debtors/adddebtor']='debtors/debtors/adddebtor';
 $route['items/view'] = 'items/items/view';
 $route['items/additem'] = 'items/items/additem';
 $route['items/edititem/(:any)'] = 'items/items/edititem/$1';
+$route['items/deleteitem/(:any)'] = 'items/items/deleteitem/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
