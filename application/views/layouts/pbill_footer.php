@@ -239,6 +239,9 @@
         $('#add').click(function(){  
             addnewrow();
         }); 
+        $('body').delegate('.remove','click',function(){  
+           $(this).parent().parent().remove();  
+         });  
       })
 
       function addnewrow(){  
@@ -250,7 +253,8 @@
           '<td><input type="text" min=0  name="item_name"></td>'+  
           '<td><input type="text" min=0  name="quantity"></td>'+  
           '<td><input type="text" min=0 step = "0.0001"  name="rate"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="total"></td>'+   
+          '<td><input type="text" min=0 step = "0.0001"  name="total"></td>'+ 
+          '<td><a href="#" class="remove">Delete</td>'  
             
           '</tr>';  
           
