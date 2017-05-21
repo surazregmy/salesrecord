@@ -25,7 +25,7 @@
 			$this->load->view('layouts/headh');
 			$this->load->view('layouts/sidebar');
 			$this->load->view('pbills/addpbills');
-			$this->load->view('layouts/footerh');
+			$this->load->view('layouts/pbill_footer');
 			
 		}
 
