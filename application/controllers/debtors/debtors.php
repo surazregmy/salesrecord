@@ -51,7 +51,7 @@ class Debtors extends CI_Controller{
 
     public function deletedebtor($id){
         echo $id;
-//        $this->debtor_model->delete_debtor($id);
+         $this->debtor_model->delete_debtor($id);
         redirect('debtors/view');
     }
 }

@@ -43,7 +43,7 @@
                     <td> <?php echo $debtor['contact']; ?></td>
                     
                     <td><a href='editdebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='deletedebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    <td><a href='debtors/deletedebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
 
                   </tr>
                 <?php endforeach?>
