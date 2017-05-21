@@ -38,9 +38,12 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php $i = 0;?>
                 <?php foreach($items as $item): ?>
+                    <?php  $i++ ?>
                  <tr>
-                    <td><?php echo $item['items_id']; ?></td>
+<!--                    <td>--><?php //echo $item['items_id']; ?><!--</td>-->
+                    <td><?php echo $i; ?></td>
                     <td><?php echo $item['items_name']; ?></td>
                     <td><?php echo $item['items_category']; ?></td>
                     <td> <?php echo $item['items_quantity']; ?></td>

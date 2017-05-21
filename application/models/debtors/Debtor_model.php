@@ -29,6 +29,27 @@ class Debtor_model extends CI_Model {
             'contact' =>$this->input->post('contact'),
         );
         return $this->db->insert('debtors',$data);
-        //print_r($data); (It does print ! I dont know how :P Cheers :D )
+    }
+
+    public function update_debtor(){
+        $id = $this->input->post('id');
+
+        $data = array(
+            'name' => $this->input->post('name'),
+            'address' =>$this->input->post('address'),
+            'contact' =>$this->input->post('contact'),
+        );
+        $this->db->where('id',$id);
+        return $this->db->update('debtors',$data);
+
+    }
+
+    public function delete_debtor($id){
+        $this->db->where('id',$id);
+        $this->db->delete('debtors');
+        return true;
+
     }
 }
+
+?>

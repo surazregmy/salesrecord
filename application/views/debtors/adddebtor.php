@@ -29,18 +29,18 @@
                 <table class="table table-bordered table-hover">
                   <tr>
                     <td>Name</td>
-                    <td><input type="text" name="name" ></td>
+                    <td><input type="text" name="name" required="required" class="form-control" ></td>
                   </tr>
                    <tr>
                     <td>Address</td>
-                    <td><input type="text" name="address" required="required"></td>
+                    <td><input type="text" name="address" required="required" class="form-control"></td>
                   </tr>
                   <tr>
                     <td>Contact</td>
-                    <td><input type="number" min="0" name="contact" required="required" type="number" ></td>
+                    <td><input type="number" min="0" name="contact" required="required" type="number" class="form-control" ></td>
                   </tr>
                   <tr>
-                    <td colspan = "2"><input class ="btn btn-default" type="submit" name="submit"></td>
+                    <td colspan = "2"><input class ="btn btn-primary" type="submit" name="submit" value="Add Debtor"></td>
                     <td></td>
                   </tr>
                 </table>
