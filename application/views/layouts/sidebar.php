@@ -24,6 +24,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
+
         <li class="header"><b>Stock Section</b></li>
         <li class="treeview active">
           <a href="#">
@@ -40,17 +41,17 @@
     
     <li class="header"><b>Purchase Section</b></li>
     
-        <li class="treeview">
+        <li class="treeview active ">
           <a href="#">
-            <i class="fa fa-th"></i>
+            <i class="fa fa-dashboard"></i>
             <span>Debtors</span>
              <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
              </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> View Debtors</a></li>
-            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
+            <li class="active"><a  href="<?php echo base_url(); ?>debtors/debtors/view"><i class="fa fa-circle-o"></i> View Debtors</a></li>
+            <li><a href="<?php echo base_url(); ?>debtors/debtors/adddebtor"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
            </ul>
         </li>
     

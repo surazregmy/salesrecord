@@ -54,6 +54,10 @@ $route['default_controller'] = 'welcome'; // default is not working
 $route['dashboard/(:any)'] = 'dashboard/dashboard/$1';
 
 $route['debtors/view'] = 'debtors/debtors/view';
+$route['debtors/adddebtor'] = 'debtors/debtors/adddebtor';
+$route['debtors/editdebtor/(:any)'] = 'debtors/debtors/editdebtor/$1';
+$roue['debtors/deletedebtor/(:any)'] = 'debtors/debtors/deletedebtor/$1';
+
 
 
 
