@@ -41,7 +41,6 @@
                   </tr>
                   <tr>
                     <td colspan = "2"><input class ="btn btn-primary" type="submit" name="submit" value="Add Debtor"></td>
-                    <td></td>
                   </tr>
                 </table>
 

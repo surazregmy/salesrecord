@@ -45,6 +45,7 @@ class Debtor_model extends CI_Model {
     }
 
     public function delete_debtor($id){
+//        echo $id;
         $this->db->where('id',$id);
         $this->db->delete('debtors');
         return true;

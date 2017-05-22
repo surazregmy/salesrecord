@@ -248,15 +248,25 @@
            var vartr = '<tr>'+  
           '<td class="no">'+n+'</td>'+  
           '<td><input type="text" min=0  name="item_name"></td>'+  
-          '<td><input type="text" min=0  name="quantity"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="rate"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="total"></td>'+   
+          '<td><input class="quant" type="text" min=0  name="quantity"></td>'+
+          '<td><input class="rate" type="text" min=0 step = "0.0001"  name="rate"></td>'+
+          '<td><input class ="total" type="text" min=0 step = "0.0001"  name="total"></td>'+
             
-          '</tr>';  
-          
-
+          '</tr>';
             $('.detail').append(vartr); 
       }
+
+
+      $('.quant,.rate').keyup(function(){
+//         var self = this;
+//           self.quant = parseFloat($('.quant').val()) || 0;
+//           self.rate = parseFloat($('.rate').val()) || 0;
+        var quant = parseFloat($(this).closest(".row").find(".quant").val()) || 0;
+        var rate = parseFloat($(this).closest(".row").find(".rate").val()) || 0;
+        $(this).closest(".row").find(".total").val(quant * rate);
+
+        $('.total').val(quant * rate);
+        });
   </script>
 
 </body>

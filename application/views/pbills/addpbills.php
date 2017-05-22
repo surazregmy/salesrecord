@@ -100,37 +100,37 @@
             <tr>
               <td>1</td>
               <td><input type="text"  name="items_name1" ></td>
-              <td><input type="text"  name="quantity1"></td>
-              <td><input type="text"  name="rate1"></td>
-              <td><input type="text"  name="total1"></td>
+              <td><input type="text"  class="quant" name="quantity1"></td>
+              <td><input type="text"  class="rate" name="rate1"></td>
+              <td><input type="text"  class ="total" name="total1"></td>
             </tr>
             <tr>
               <td>2</td>
               <td><input type="text"  name="items_name2" ></td>
-              <td><input type="text"  name="quantity2"></td>
-              <td><input type="text"  name="rate2"></td>
-              <td><input type="text"  name="total2"></td>
+              <td><input type="text" class="quant" name="quantity2"></td>
+              <td><input type="text" class="rate" name="rate2"></td>
+              <td><input type="text" class ="total" name="total2"></td>
             </tr>
             <tr>
               <td>3</td>
               <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text"  name="quantity3"></td>
-              <td><input type="text"  name="rate3"></td>
-              <td><input type="text"  name="total3"></td>
+              <td><input type="text" class="quant" name="quantity3"></td>
+              <td><input type="text" class="rate" name="rate3"></td>
+              <td><input type="text" class ="total" name="total3"></td>
             </tr>
            <tr>
               <td>4</td>
               <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text"  name="quantity3"></td>
-              <td><input type="text"  name="rate3"></td>
-              <td><input type="text"  name="total3"></td>
+              <td><input type="text" class="quant" name="quantity3"></td>
+              <td><input type="text" class="rate" name="rate3"></td>
+              <td><input type="text" class ="total" name="total3"></td>
             </tr>
             <tr>
               <td>5</td>
-              <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text"  name="quantity3"></td>
-              <td><input type="text"  name="rate3"></td>
-              <td><input type="text"  name="total3"></td>
+                <td><input type="text"  name="items_name3" ></td>
+                <td><input type="text" class="quant" name="quantity3"></td>
+                <td><input type="text" class="rate" name="rate3"></td>
+                <td><input type="text" class ="total" name="total3"></td>
             </tr>
             </tbody>
           </table>
@@ -138,7 +138,7 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-       </form>
+       </div>
 
    
 
