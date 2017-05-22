@@ -58,6 +58,10 @@ $route['debtors/adddebtor'] = 'debtors/debtors/adddebtor';
 $route['debtors/editdebtor/(:any)'] = 'debtors/debtors/editdebtor/$1';
 $roue['debtors/deletedebtor/(:any)'] = 'debtors/debtors/deletedebtor/$1';
 
+$route['creditors/view'] = 'creditors/creditors/view';
+$roue['creditors/addcreditor'] = 'creditors/creditors/addcreditor';
+$route['creditors/editcreditor/(:any)'] = 'creditors/creditors/editcreditor/$1';
+$route['creditors/deletecreditor/(:any)'] = 'creditors/creditors/deletecreditor/$1';
 
 
 

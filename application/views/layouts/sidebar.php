@@ -94,8 +94,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i>View Creditors</a></li>
-            <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i>Add Creditors</a></li>
+            <li><a href="<?php echo base_url(); ?>creditors/creditors/view"><i class="fa fa-circle-o"></i>View Creditors</a></li>
+            <li><a href="<?php echo base_url(); ?>creditors/creditors/addcreditor"><i class="fa fa-circle-o"></i>Add Creditors</a></li>
           </ul>
         </li>
     
