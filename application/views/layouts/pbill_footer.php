@@ -218,6 +218,23 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
 <!-- page script -->
+<!--Select2-->
+
+<script src="<?php echo base_url(); ?>assets/plugins/select2/select2.full.min.js"></script>
+
+<script type="text/javascript">
+
+
+  var complex = '<?php echo json_encode($items); ?>';  // The encode data is in string
+  var o = JSON.parse(complex);  // Parse to Json Object 
+  //alert(complex);
+  //alert(o[0].items_id);
+
+
+
+
+ </script>
+
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -234,40 +251,84 @@
 
  <script type="text/javascript">
 
-  
+      $(".select2").select2();
+
       $(function(){
         $('#add').click(function(){  
             addnewrow();
         }); 
+
+        $('body').delegate('.remove','click',function(){  
+           $(this).parent().parent().remove();  
+         }); 
+
+        $('body').delegate('.quantity,.rate,.total','keyup',function(){  
+          var tr=$(this).parent().parent();  
+          var qty=tr.find('.quantity').val();  
+          var price=tr.find('.rate').val();  
+            
+            
+          var amt =(qty * price);  
+          tr.find('.total').val(amt);  
+          grandtotal();  
+        });   
       })
+
+      function grandtotal()  {  
+      var t=0;  
+      $('.total').each(function(i,e)   
+      {  
+      var amt =$(this).val()-0;  
+      t+=amt;  
+      });  
+      $('.grandtotal').html(t);  
+      } 
 
       function addnewrow(){  
       
           var n=($('.detail tr').length-0)+1; 
+
+          var count = Object.keys(o).length;
+         // alert(count);
+          
+         
+          var string ="";
+          var form_string = "name = \"item2\" class=\"form-control select2 \" style=\"width: 100%;\"";
+
+          for(var i=0; i<count; i++){
+            string = string+'<option value = \" '+ o[i].items_id+'\"'+'>'+o[i].items_name+ '</option>'
+          }
+          //alert(string);
           
            var vartr = '<tr>'+  
           '<td class="no">'+n+'</td>'+  
-          '<td><input type="text" min=0  name="item_name"></td>'+  
-          '<td><input class="quant" type="text" min=0  name="quantity"></td>'+
-          '<td><input class="rate" type="text" min=0 step = "0.0001"  name="rate"></td>'+
-          '<td><input class ="total" type="text" min=0 step = "0.0001"  name="total"></td>'+
+          '<td><select '+form_string+'>'+ string +'</select></td>'+  
+          '<td><input type="text" min=0  name="quantity" class="quantity"></td>'+  
+          '<td><input type="text" min=0 step = "0.0001"  name="rate" class="rate"></td>'+  
+          '<td><input type="text" min=0 step = "0.0001"  name="total" class="total"></td>'+ 
+          '<td><a href="#" class="remove">Delete</td>'  
             
-          '</tr>';
+          '</tr>';  
+           
             $('.detail').append(vartr); 
+
+            // This is the one to load the select2 bootstrap plugin again
+            // It is also necessary to load the multiply function
+            $(document).ready(function() {
+                $(".select2").select2();
+
+                $('body').delegate('.quantity,.rate,.total','keyup',function(){  
+                  var tr=$(this).parent().parent();  
+                  var qty=tr.find('.quantity').val();  
+                  var price=tr.find('.rate').val();  
+                  var amt =(qty * price);  
+                  tr.find('.total').val(amt);  
+                 // total();  
+               });
+            });
       }
-
-
-      $('.quant,.rate').keyup(function(){
-//         var self = this;
-//           self.quant = parseFloat($('.quant').val()) || 0;
-//           self.rate = parseFloat($('.rate').val()) || 0;
-        var quant = parseFloat($(this).closest(".row").find(".quant").val()) || 0;
-        var rate = parseFloat($(this).closest(".row").find(".rate").val()) || 0;
-        $(this).closest(".row").find(".total").val(quant * rate);
-
-        $('.total').val(quant * rate);
-        });
   </script>
+
 
 </body>
 </html>

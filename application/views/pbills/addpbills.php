@@ -1,3 +1,4 @@
+
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -34,7 +35,13 @@
                   <label  class="col-sm-3 control-label">Debtors Name :</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="debtors_name">
+                    <select name = "debtor_id" class="form-control select2">
+                       <?php foreach($debtors as $debtor): ?>
+                                  <option value="<?php echo $debtor['id'] ?>"><?php echo $debtor['name'];?></option>
+                                  
+                        <?php endforeach ?>
+                    </select>
+
                   </div>
                 </div>
 
@@ -83,6 +90,7 @@
       <!-- /.row -->
 
       <!-- Table row -->
+     
       <div class="row">
         <div class="col-xs-12 table-responsive">
           <table class="table">
@@ -97,48 +105,56 @@
             </tr>
             </thead>
             <tbody class="detail">
+
             <tr>
               <td>1</td>
-              <td><input type="text"  name="items_name1" ></td>
-              <td><input type="text"  class="quant" name="quantity1"></td>
-              <td><input type="text"  class="rate" name="rate1"></td>
-              <td><input type="text"  class ="total" name="total1"></td>
+              <td>
+                   <select name = "item1" class="form-control select2" style="width: 100%;">
+                       <?php foreach($items as $item): ?>
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>
+                                  
+                        <?php endforeach ?>
+                    </select>
+              </td>
+              <td><input type="text"  name="quantity1" class="quantity"></td>
+              <td><input type="text"  name="rate1" class="rate"></td>
+              <td><input type="text"  name="total1" class="total"></td>
             </tr>
+
             <tr>
               <td>2</td>
-              <td><input type="text"  name="items_name2" ></td>
-              <td><input type="text" class="quant" name="quantity2"></td>
-              <td><input type="text" class="rate" name="rate2"></td>
-              <td><input type="text" class ="total" name="total2"></td>
+              <td>
+                   <select name = "item2" class="form-control select2" style="width: 100%;">
+                       <?php foreach($items as $item): ?>
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>          
+                        <?php endforeach ?>
+                    </select>
+              </td>
+              <td><input type="text"  name="quantity2" class="quantity"></td>
+              <td><input type="text"  name="rate2" class="rate"></td>
+              <td><input type="text"  name="total2" class="total"></td>
             </tr>
-            <tr>
-              <td>3</td>
-              <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text" class="quant" name="quantity3"></td>
-              <td><input type="text" class="rate" name="rate3"></td>
-              <td><input type="text" class ="total" name="total3"></td>
-            </tr>
-           <tr>
-              <td>4</td>
-              <td><input type="text"  name="items_name3" ></td>
-              <td><input type="text" class="quant" name="quantity3"></td>
-              <td><input type="text" class="rate" name="rate3"></td>
-              <td><input type="text" class ="total" name="total3"></td>
-            </tr>
-            <tr>
-              <td>5</td>
-                <td><input type="text"  name="items_name3" ></td>
-                <td><input type="text" class="quant" name="quantity3"></td>
-                <td><input type="text" class="rate" name="rate3"></td>
-                <td><input type="text" class ="total" name="total3"></td>
-            </tr>
+
+            <tfoot>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>Grand Total</th>
+                  <th class="grandtotal"></th>
+                </tr>
+            </tfoot>
+
+
+
+            
             </tbody>
           </table>
         </div>
         <!-- /.col -->
       </div>
       <!-- /.row -->
-       </div>
+       </form>
 
    
 
@@ -152,4 +168,5 @@
     <!-- /.content -->
     <div class="clearfix"></div>
   </div>
+
 
