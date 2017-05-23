@@ -33,4 +33,27 @@ class Debtors extends CI_Controller{
         }
 
     }
+
+    public function editdebtor($id){
+        $data['title'] = "Edit Debtors";
+        $data['debtor'] = $this->debtor_model->get_debtors($id);
+
+        $this->load->view('layouts/headh');
+        $this->load->view('layouts/sidebar');
+        $this->load->view('debtors/editdebtor',$data);
+        $this->load->view('layouts/footerh');
+    }
+
+    public function updatedebtor(){
+        $this->debtor_model->update_debtor();
+        redirect('debtors/view');
+    }
+
+    public function deletedebtor($id){
+        echo $id;
+         $this->debtor_model->delete_debtor($id);
+        redirect('debtors/view');
+    }
 }
+
+?>

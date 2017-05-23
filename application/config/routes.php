@@ -49,15 +49,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
 $route['default_controller'] = 'welcome'; // default is not working 
 $route['dashboard/(:any)'] = 'dashboard/dashboard/$1';
 
 $route['debtors/view'] = 'debtors/debtors/view';
-$route['debtors/adddebtor']='debtors/debtors/adddebtor';
+$route['debtors/adddebtor'] = 'debtors/debtors/adddebtor';
+$route['debtors/editdebtor/(:any)'] = 'debtors/debtors/editdebtor/$1';
+$roue['debtors/deletedebtor/(:any)'] = 'debtors/debtors/deletedebtor/$1';
+
+$route['creditors/view'] = 'creditors/creditors/view';
+$roue['creditors/addcreditor'] = 'creditors/creditors/addcreditor';
+$route['creditors/editcreditor/(:any)'] = 'creditors/creditors/editcreditor/$1';
+$route['creditors/deletecreditor/(:any)'] = 'creditors/creditors/deletecreditor/$1';
+
 
 
 $route['items/view'] = 'items/items/view';
 $route['items/additem'] = 'items/items/additem';
 $route['items/edititem/(:any)'] = 'items/items/edititem/$1';
+$route['items/deleteitem/(:any)'] = 'items/items/deleteitem/$1';
+
+$route['pbills/view'] = 'pbills/pbills/view';
+$route['pbills/addpbills'] = 'pbills/pbills/addpbills';
+
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

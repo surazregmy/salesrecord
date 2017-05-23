@@ -32,4 +32,30 @@
 			return $this->db->insert('items',$data);
 			//print_r($data); (It does print ! I dont know how :P Cheers :D )
 		}
+
+		public function update_item(){
+			$id = $this->input->post('id');
+
+			$data = array(
+					'items_name' => $this->input->post('name'),
+					'items_category' =>$this->input->post('category'),
+					'items_quantity' =>$this->input->post('quantity'),
+					'items_cp' => $this->input->post('cp'),
+					'items_sp' => $this ->input->post('sp'),
+					'items_dp' => $this ->input->post('dr')
+				);
+			      $this->db->where('items_id',$id);
+			return $this->db->update('items',$data);
+		}
+
+		public function delete_item($id){
+
+			$this->db->where('items_id',$id);
+			$this->db->delete('items');
+			return true;
+
+		}
+
+
+
 	}

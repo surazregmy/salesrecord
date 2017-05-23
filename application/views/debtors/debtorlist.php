@@ -33,16 +33,18 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php $i =0;?>
                 <?php foreach($debtors as $debtor): ?>
+                  <?php $i++; ?>
                  <tr>
-                    <td><?php echo $debtor['id']; ?></td>
+                    <td><?php echo $i;?></td>
                     <td><?php echo $debtor['name']; ?></td>
                     <td><?php echo $debtor['address']; ?></td>
                     <td> <?php echo $debtor['contact']; ?></td>
                     
-                    <td><a href='debtors/editdebtor/<?php echo $item['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
-                    
+                    <td><a href='editdebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
+                    <td><a href='debtors/deletedebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+
                   </tr>
                 <?php endforeach?>
                 

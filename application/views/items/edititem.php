@@ -25,7 +25,8 @@
             <div class="box-body">
               <p>Hello This is me Gentleman</p>
 
-              <?php echo form_open('items/items/additem'); ?>
+              <?php echo form_open('items/items/updateitem'); ?>
+                <input type="hidden" name="id" value="<?php echo($item['items_id']);?>">
                 <table class="table table-bordered table-hover">
                   <tr>
                     <td>Name</td>

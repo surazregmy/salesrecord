@@ -38,9 +38,12 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php $i = 0;?>
                 <?php foreach($items as $item): ?>
+                    <?php  $i++ ?>
                  <tr>
-                    <td><?php echo $item['items_id']; ?></td>
+<!--                    <td>--><?php //echo $item['items_id']; ?><!--</td>-->
+                    <td><?php echo $i; ?></td>
                     <td><?php echo $item['items_name']; ?></td>
                     <td><?php echo $item['items_category']; ?></td>
                     <td> <?php echo $item['items_quantity']; ?></td>
@@ -48,8 +51,8 @@
                     <td><?php echo $item['items_sp']; ?></td>
                     <td><?php echo $item['items_dp']; ?></td>
                     
-                    <td><a href='items/edititem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    <td><a href='edititem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
+                    <td><a href='deleteitem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
                     
                   </tr>
                 <?php endforeach?>  
