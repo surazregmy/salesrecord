@@ -132,3 +132,22 @@
                 <?php endforeach?>  
                 
               </table>
+
+
+---------
+<?php foreach($pbills as $pbill): ?>
+                    
+                 <tr>
+                   
+                    <td><?php echo $pbill['pbills_id']; ?></td>
+                    <td><?php echo $pbill['original_id']; ?></td>
+                    <td><?php echo $pbill['debtors_id']; ?></td>
+                    <td> <?php echo $pbill['purchase_date']; ?></td>
+                    <td><?php echo $pbill['entered_by']; ?></td>
+                    <td><?php echo $pbill['status']; ?></td>
+                   
+                    <td><a href='edititem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
+                    <td><a href='deleteitem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    
+                  </tr>
+                <?php endforeach?> 

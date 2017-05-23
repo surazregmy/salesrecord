@@ -67,6 +67,7 @@ $route['items/edititem/(:any)'] = 'items/items/edititem/$1';
 $route['items/deleteitem/(:any)'] = 'items/items/deleteitem/$1';
 
 $route['pbills/view'] = 'pbills/pbills/view';
+$route['pbills/viewsinglepbill/(:any)'] = 'pbills/pbills/viewsinglepbill/$1';
 $route['pbills/addpbills'] = 'pbills/pbills/addpbills';
 
 

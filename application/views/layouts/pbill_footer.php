@@ -286,31 +286,44 @@
 
       function addnewrow(){  
       
-          var n=($('.detail tr').length-0)+1; 
+          var n=($('.detail tr').length)+1; 
 
           var count = Object.keys(o).length;
          // alert(count);
           
          
           var string ="";
-          var form_string = "name = \"item2\" class=\"form-control select2 \" style=\"width: 100%;\"";
+          var form_string = " class=\"form-control select2 \" style=\"width: 100%;\"";
 
           for(var i=0; i<count; i++){
             string = string+'<option value = \" '+ o[i].items_id+'\"'+'>'+o[i].items_name+ '</option>'
           }
           //alert(string);
           
-           var vartr = '<tr>'+  
+           var vartrk = '<tr>'+  
           '<td class="no">'+n+'</td>'+  
-          '<td><select '+form_string+'>'+ string +'</select></td>'+  
-          '<td><input type="text" min=0  name="quantity" class="quantity"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="rate" class="rate"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="total" class="total"></td>'+ 
+          '<td><select name =item'+n+form_string+'>'+ string +'</select></td>'+  
+          '<td><input type="text" min=0  name="quantity'+n+'" class="quantity"></td>'+  
+          '<td><input type="text" min=0 step = "0.0001"  name="rate'+n+'" class="rate"></td>'+  
+          '<td><input type="text" min=0 step = "0.0001"  name="total'+n+'" class="total"></td>'+ 
           '<td><a href="#" class="remove">Delete</td>'  
             
           '</tr>';  
-           
-            $('.detail').append(vartr); 
+
+           var vartr = '<tr>'+  
+          '<td class="no">'+n+'</td>'+  
+          '<td><select '+form_string+'>'+ string +'</select></td>'+  
+          '<td><input type="text" min=0  name="quantity3" class="quantity"></td>'+  
+          '<td><input type="text" min=0 step = "0.0001"  name="rate3" class="rate"></td>'+  
+          '<td><input type="text" min=0 step = "0.0001"  name="total3" class="total"></td>'+ 
+          '<td><a href="#" class="remove">Delete</td>'  
+            
+          '</tr>';  
+           // $('.form').closest('.table').children('.detail').append(vartr)
+            $('.detail').append(vartrk); 
+
+            //var par = $('.myform');
+           // $(par).append(vartrk); 
 
             // This is the one to load the select2 bootstrap plugin again
             // It is also necessary to load the multiply function
