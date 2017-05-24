@@ -38,31 +38,31 @@
                 <tr>
                   
                   <td><b>Debtor's Name</b></td>
-                  <td><?php  echo $pbills['debtors_id']?></td>
+                  <td><?php  echo $pbills_items[0]['name']?></td>
                   
                 </tr>
                  <tr>
                   
                   <td style="width: 130px"><b>Bill NO: </b></td>
-                  <td><?php  echo $pbills['original_id']?></td>
+                  <td><?php  echo $pbills_items[0]['original_id']?></td>
                   
                 </tr>
                  <tr>
                   
                   <td><b>Date</b></td>
-                  <td><?php  echo $pbills['purchase_date']?></td>
+                  <td><?php  echo  $pbills_items[0] ['purchase_date']?></td>
                   
                 </tr>
                 <tr>
                   
                   <td><b>Entered By</b></td>
-                  <td><?php  echo $pbills['entered_by']?></td>
+                  <td><?php  echo  $pbills_items[0] ['entered_by']?></td>
                   
                 </tr>
                 <tr>
                   
                   <td><b>Type</b></td>
-                  <td>Cr.</td>
+                  <td><?php  echo  $pbills_items[0] ['status']?></td>
                   
                 </tr>
                 
@@ -87,15 +87,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>    
+                 <?php $i = 0; ?>
+                 <?php foreach($pbills_items as $pbills_item ): ?>
+                  <?php  $i++ ?>
+                  <tr>
+                  <td><?php echo $i ?></td>
+                  <td><?php  echo $pbills_item['items_name']?></td>
+                  <td><?php  echo $pbills_item['quantity']?></td>
+                  <td><?php  echo $pbills_item['price']?></td>
+                  <td><?php  echo $pbills_item['total']?></td>
+                  </tr>
+
+                  
+                <?php endforeach?>  
+
                 </tbody>
               </table>
         </div>

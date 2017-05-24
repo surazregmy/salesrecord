@@ -43,7 +43,7 @@
                       <?php if($pbill['debtors_id'] == $debtor['id']) {?>
                  <tr>
                     <td><?php echo $pbill['pbills_id']; ?></td>
-                    <td><?php echo $pbill['original_id']; ?></td>
+                    <td><a href=" viewsinglepbill/<?php echo $pbill['pbills_id'] ?>"> <?php echo $pbill['original_id']; ?></td>
                     <td><?php echo $debtor['name']; ?></td>
                     <td> <?php echo $pbill['purchase_date']; ?></td>
                     <td><?php echo $pbill['entered_by']; ?></td>

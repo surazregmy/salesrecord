@@ -55,12 +55,15 @@
 			}
 			
 			
-		    $data['pbills'] = $this->pbill_model->get_pbill($id);
-			$data['debtors'] = $this->debtor_model->get_debtors();
-			$data['items'] = $this->item_model->get_items();
-		    $data['pbills_items'] = $this->pbill_item_model->get_pbill_items($id);
+		 //    $data['pbills'] = $this->pbill_model->get_pbill($id);
+			// $data['debtors'] = $this->debtor_model->get_debtors();
+			// $data['items'] = $this->item_model->get_items();
+		 //    $data['pbills_items'] = $this->pbill_item_model->get_pbill_items($id);
+
+
+		     $data['pbills_items'] = $this->pbill_item_model->get_singlepbill_from_join($id);
 		    // echo "<pre>";
-		    // print_r($data['pbill_items']);
+		    // print_r($data['pbills_items']);
 		    // die;
 			
 			$this->load->view('layouts/headh');
