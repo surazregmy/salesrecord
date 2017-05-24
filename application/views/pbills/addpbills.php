@@ -155,6 +155,11 @@
         </div>
         <!-- /.col -->
       </div>
+<<<<<<< HEAD
+      <!-- /.row -->
+       </div>
+=======
+>>>>>>> 87894c1d8c8d364c26c9065e760e4b091bc6796e
 
 <?php echo form_close(); ?>
   

@@ -7,7 +7,13 @@
  */
 
 class Sbills extends CI_Controller {
-    public function view(){
-        echo "test";
+    public function view($page='addsbills'){
+        $data['title'] = ucfirst($page);
+//        $data['sbills'] = $this->sbill_model->get_sbills();
+
+        $this->load->view('layouts/headh');
+        $this->load->view('layouts/sidebar');
+        $this->load->view('sbills/'.$page);
+        $this->load->view('layouts/footerh');
     }
 }

@@ -63,6 +63,8 @@ $roue['creditors/addcreditor'] = 'creditors/creditors/addcreditor';
 $route['creditors/editcreditor/(:any)'] = 'creditors/creditors/editcreditor/$1';
 $route['creditors/deletecreditor/(:any)'] = 'creditors/creditors/deletecreditor/$1';
 
+$roue['sbills/addsbills'] = ['sbills/sbills/addsbills'];
+
 
 
 $route['items/view'] = 'items/items/view';
@@ -73,6 +75,7 @@ $route['items/deleteitem/(:any)'] = 'items/items/deleteitem/$1';
 $route['pbills/view'] = 'pbills/pbills/view';
 $route['pbills/viewsinglepbill/(:any)'] = 'pbills/pbills/viewsinglepbill/$1';
 $route['pbills/addpbills'] = 'pbills/pbills/addpbills';
+
 
 
 
