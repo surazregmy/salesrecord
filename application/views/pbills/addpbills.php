@@ -25,10 +25,15 @@
         </div>
         <!-- /.col -->
       </div>
-      <!-- info row -->
+
+<?php $attributes = array('class' => 'form-horizontal myform'); ?>
+      <?php echo form_open('pbills/pbills/savepbills', $attributes); ?>
+
       <div class="row invoice-info">
         <div class="col-sm-6 invoice-col">
-          <form class="form-horizontal">
+          <!-- <form class="form-horizontal"> -->
+
+
               <div class="box-body">
 
                 <div class="form-group">
@@ -49,47 +54,41 @@
                   <label  class="col-sm-3 control-label">Bill No :</label>
 
                   <div class="col-sm-9">
-                    <input type="number" class="form-control" name="pbill_no">
+                    <input type="number" class="form-control" name="pbill_no" required="required">
                   </div>
                 </div>
 
                 
 
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Date:</label>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Date:</label>
 
-                <div class="col-sm-9">
-                <div class="input-group date ">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
+                  <div class="col-sm-9">
+                  <div class="input-group date ">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="date" name="pdate" class="form-control pull-right" id="datepicker" required="required">
                   </div>
-                  <input type="date" class="form-control pull-right" id="datepicker">
+                  <!-- /.input group -->
                 </div>
-                <!-- /.input group -->
-              </div>
+
               </div>
 
               <div class="form-group">
                   <label  class="col-sm-3 control-label">Entered By:</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="pbill_no" value="SURAJ">
+                    <input type="text" class="form-control" name="entered_by" value="SURAJ" >
                   </div>
                 </div>
 
                 
               <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-info ">ADD PBill</button>
-              </div>
-              <!-- /.box-footer -->
-           
-          
-        </div>  
-      </div>
-      <!-- /.row -->
 
-      <!-- Table row -->
+         </div>  
+      </div>
+    
      
       <div class="row">
         <div class="col-xs-12 table-responsive">
@@ -108,23 +107,24 @@
 
             <tr>
               <td>1</td>
-              <td>
-                   <select name = "item1" class="form-control select2" style="width: 100%;">
+              <td >
+                   <select name = "item1" class="select2" style="width: 100%;">
                        <?php foreach($items as $item): ?>
-                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>
-                                  
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>          
                         <?php endforeach ?>
                     </select>
               </td>
               <td><input type="text"  name="quantity1" class="quantity"></td>
               <td><input type="text"  name="rate1" class="rate"></td>
               <td><input type="text"  name="total1" class="total"></td>
+              </form>
             </tr>
+
 
             <tr>
               <td>2</td>
               <td>
-                   <select name = "item2" class="form-control select2" style="width: 100%;">
+                   <select name = "item2" class="select2" style="width: 100%;">
                        <?php foreach($items as $item): ?>
                                   <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>          
                         <?php endforeach ?>
@@ -133,12 +133,14 @@
               <td><input type="text"  name="quantity2" class="quantity"></td>
               <td><input type="text"  name="rate2" class="rate"></td>
               <td><input type="text"  name="total2" class="total"></td>
+              </form>
             </tr>
+            
 
             <tfoot>
                 <tr>
                   <th></th>
-                  <th></th>
+                  <th> <input type="submit" name="" class="form-group btn btn-primary" value="Submit"></th>
                   <th></th>
                   <th>Grand Total</th>
                   <th class="grandtotal"></th>
@@ -153,10 +155,17 @@
         </div>
         <!-- /.col -->
       </div>
+<<<<<<< HEAD
       <!-- /.row -->
        </div>
+=======
+>>>>>>> 87894c1d8c8d364c26c9065e760e4b091bc6796e
 
-   
+<?php echo form_close(); ?>
+  
+
+
+     
 
       <!-- this row will not appear when printing -->
       <div class="row no-print">
@@ -165,8 +174,8 @@
         </div>
       </div>
     </section>
-    <!-- /.content -->
+   
     <div class="clearfix"></div>
-  </div>
-
+  
+</div>
 
