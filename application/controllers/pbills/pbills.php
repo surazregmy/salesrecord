@@ -73,6 +73,25 @@
 			
 		}
 
+		
+
+		public function editpbills($id){
+			$page = 'editpbills';
+			if(!file_exists(APPPATH.'views/pbills/'.$page.'.php')){
+				show_404();
+			}
+			
+
+		     $data['pbills_items'] = $this->pbill_item_model->get_singlepbill_from_join($id);
+		    
+			
+			$this->load->view('layouts/headh');
+			$this->load->view('layouts/sidebar');
+			$this->load->view('pbills/'.$page, $data);
+			$this->load->view('layouts/footerh');
+			
+		}
+
 	}
 ?>
 

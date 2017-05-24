@@ -64,8 +64,8 @@
              </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> View Debtors</a></li>
-            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
+            <li><a href="<?php echo base_url(); ?>pbills/pbills/view"><i class="fa fa-circle-o"></i> View Purchase Bills</a></li>
+            <li><a href="<?php echo base_url(); ?>pbills/pbills/addpbills"><i class="fa fa-circle-o"></i> Add Purchase Bills</a></li>
            </ul>
         </li>
 

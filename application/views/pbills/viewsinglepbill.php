@@ -101,8 +101,15 @@
                   
                 <?php endforeach?>  
 
+
+
                 </tbody>
+
               </table>
+              <?php echo form_open('pbills/pbills/editpbills/'.$pbills_items[0]['pbills_id']); ?>
+              <input type="hidden" name="pbills_id" value="<?php echo  $pbills_items[0]['pbills_id'] ; ?>">
+              <input type="submit" name="" class="form-group btn btn-primary" value="Edit">
+              <?php echo form_close() ?>
         </div>
    </div>
         <!-- /.col -->
