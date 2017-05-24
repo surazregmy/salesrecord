@@ -32,24 +32,24 @@ Invoice
               <div class="box-body">
 
                 <div class="form-group">
-                  <label  class="col-sm-3 control-label">Debtors Name :</label>
+                  <label  class="col-sm-3 control-label">Creditor Name:</label>
 
                   <div class="col-sm-9">
                     <select name = "debtor_id" class="form-control select2">
-                       <?php foreach($debtors as $debtor): ?>
-    <option value="<?php echo $debtor['id'] ?>"><?php echo $debtor['name'];?></option>
+                       <?php foreach($creditors as $creditor): ?>
+                           <option value="<?php echo $creditor['cid'] ?>"><?php echo $creditor['creditor_name'];?></option>
 
-<?php endforeach ?>
-</select>
+                        <?php endforeach ?>
+                    </select>
 
-</div>
-</div>
+                </div>
+              </div>
 
 <div class="form-group">
     <label  class="col-sm-3 control-label">Bill No :</label>
 
     <div class="col-sm-9">
-        <input type="number" class="form-control" name="pbill_no">
+        <input type="number" class="form-control" name="sbill_no">
     </div>
 </div>
 
@@ -80,7 +80,7 @@ Invoice
 
 <!-- /.box-body -->
 <div class="box-footer">
-    <button type="submit" class="btn btn-info ">ADD PBill</button>
+    <button type="submit" class="btn btn-info ">ADD SBill</button>
 </div>
 <!-- /.box-footer -->
 
