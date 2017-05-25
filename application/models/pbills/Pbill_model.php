@@ -33,22 +33,23 @@
 	        return $query->row_array();
     	}
 
+    	public function update_pbill(){
+
+    		$id = $this->input->post('pbills_id');
+			$data = array(
+					'original_id' => $this->input->post('pbill_no'),
+					'debtors_id' =>$this->input->post('debtor_id'),
+					'purchase_date' =>$this->input->post('pdate'),
+					'entered_by' =>$this->input->post('entered_by'),
+					'status' => $this->input->post('entered_by'),
+				);
+			$this->db->where('pbills_id',$id);
+			 $this->db->update('pbills',$data);
+			 return true;
+		
+		}
 
 
-
-		//This in  not used for now
-		// public function get_pbill_id(){
-		// 	$select_attr = array(
-		// 			'original_id' => $this->input->post('pbill_no'),
-		// 			'debtors_id' => $this->input->post('debtor_id'),	
-		// 		);
-
-		// 	$this->db->select('pbills_id'); 
-		// 	 $this->db->from('pbills');   
-		//     $this->db->where($select_attr);
-		//      return $this->db->get()->result();
-		    
-		// }
 
 
 		

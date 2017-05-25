@@ -151,3 +151,110 @@
                     
                   </tr>
                 <?php endforeach?> 
+
+                ---------------------------------------------------------------------
+  <?php if($data['pbills_items'][0]['name'] == $debtor['name']) : ?>
+                            <option value="<?php echo $debtor['id'] ?>"><?php echo "HIK";?></option>
+                          <?php else: ?>
+                                  <option value="<?php echo $debtor['id'] ?>"><?php echo "Hi";?></option>     
+  <?php endif ?>
+
+
+
+
+        
+
+  //    for ($i=$starting_index_for_row; $i < count($_POST); $i+=4) { 
+
+      
+  //      $one_row = array_slice($_POST,$i,4);
+
+  //      if($current_no_of_rows == $_POST['no_of_rows']){
+      
+  //          if (!(in_array(null, $one_row))) {
+
+  //            $hidden_item = "hid_itemid".$j;
+
+  //              $k = array_keys($one_row);
+  //              echo "<pre>";
+  //              print_r($one_row);
+
+                
+  //            $data = array(
+  //                'pbills_id'=> $pbill_id,
+  //                'items_id' =>$one_row[$k[0]],
+  //                'quantity' =>$one_row[$k[1]],
+  //                 'price' =>$one_row[$k[2]],
+  //                 'total' =>$one_row[$k[3]]
+  //              );
+
+  //            $query = "pbills_id = ".$pbill_id." AND items_id=".$_POST[$hidden_item];
+  //            echo $query;
+  //            $this->db->where($query);
+  //            $this->db->update('pbills_items',$data);
+  //            $j++; 
+  //          }
+
+ //         }
+ //       else{
+              
+
+
+  //        for ($i=$starting_index_for_row; $i < $first_range; $i+=4) {
+
+  //              $one_row = array_slice($_POST,$i,4);
+
+  //            if($current_no_of_rows == $_POST['no_of_rows']){
+      
+  //              if (!(in_array(null, $one_row))) {
+
+  //                $hidden_item = "hid_itemid".$j;
+
+  //                  $k = array_keys($one_row);
+  //                  echo "<pre>";
+  //                  print_r($one_row);
+
+                    
+  //                $data = array(
+  //                    'pbills_id'=> $pbill_id,
+  //                    'items_id' =>$one_row[$k[0]],
+  //                    'quantity' =>$one_row[$k[1]],
+  //                     'price' =>$one_row[$k[2]],
+  //                     'total' =>$one_row[$k[3]]
+  //                  );
+
+  //                $query = "pbills_id = ".$pbill_id." AND items_id=".$_POST[$hidden_item];
+  //                echo $query;
+  //                $this->db->where($query);
+  //                $this->db->update('pbills_items',$data);
+  //                $j++; 
+  //              }
+  //            }
+  //        }
+
+  //        for ($i=$first_range; $i <count($_POST) ; $i+=4) {
+
+  //          $one_row = array_slice($_POST,$i,4);
+      
+  //          if (!(in_array(null, $one_row))) {
+  //              $k = array_keys($one_row);
+
+  //            $data = array(
+  //                'pbills_id'=> $pbill_id,
+  //                'items_id' =>$one_row[$k[0]],
+  //                'quantity' =>$one_row[$k[1]],
+  //                 'price' =>$one_row[$k[2]],
+  //                 'total' =>$one_row[$k[3]]
+  //              );
+  //            echo "<pre>";
+  //            print_r($data);
+  //            $this->db->insert('pbills_items',$data);
+          
+ //                  }
+
+  //             }
+
+
+  //          }
+
+    
