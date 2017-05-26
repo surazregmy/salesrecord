@@ -69,7 +69,7 @@
            </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-th"></i>
             <span>Purchase Receipts</span>
@@ -78,8 +78,8 @@
              </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> View Debtors</a></li>
-            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>preceipts/preceipts/view"></i> View Preceipts</a></li>
+            <li><a href="<?php echo base_url(); ?>preceipts/preceipts/addpreceipts"></i> Add Preceipts</a></li>
            </ul>
         </li>
     

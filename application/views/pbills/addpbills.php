@@ -41,6 +41,7 @@
 
                   <div class="col-sm-9">
                     <select name = "debtor_id" class="form-control select2">
+                          <option disabled selected>Select your option</option>
                        <?php foreach($debtors as $debtor): ?>
                                   <option value="<?php echo $debtor['id'] ?>"><?php echo $debtor['name'];?></option>
                                   

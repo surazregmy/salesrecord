@@ -50,8 +50,8 @@
                     <td><?php echo $pbill['status']; ?></td>
                   
                     
-                    <td><a href='pbills/editpbills/<?php echo $pbill['pbills_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='pbills/deletepbills/<?php echo $pbill['pbills_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    <td><a href='editpbills/<?php echo $pbill['pbills_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
+                    <td><a href='deletepbills/<?php echo $pbill['pbills_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
                     
                   </tr>
                   <?php } ?> 

@@ -77,6 +77,14 @@ $route['pbills/viewsinglepbill/(:any)'] = 'pbills/pbills/viewsinglepbill/$1';
 $route['pbills/addpbills'] = 'pbills/pbills/addpbills';
 
 
+$route['preceipts/view'] = 'preceipts/preceipts/view';
+$route['preceipts/addpreceipts'] = 'preceipts/preceipts/addpreceipts';
+$route['preceipts/savepreceipts'] = 'preceipts/preceipts/savepreceipts';
+$route['preceipts/editpreceipt/(:any)'] = 'preceipts/preceipts/editpreceipt/$1';
+$route['preceipts/updatepreceipt'] = 'preceipts/preceipts/updatepreceipt';
+$route['preceipts/deletepreceipt/(:any)'] = 'preceipts/preceipts/deletepreceipt/$1';
+
+
 
 
 $route['404_override'] = '';
