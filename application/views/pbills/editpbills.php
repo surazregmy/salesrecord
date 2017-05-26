@@ -81,7 +81,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="date" name="pdate" class="form-control pull-right" id="datepicker" required="required">
+                    <input type="date" name="pdate" class="form-control pull-right" id="datepicker" required="required" value="<?php echo $pbills_items[0]['purchase_date'] ?>">
                   </div>
                   <!-- /.input group -->
                 </div>

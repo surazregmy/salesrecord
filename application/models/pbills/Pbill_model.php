@@ -48,6 +48,14 @@
 			 return true;
 		
 		}
+		public function delete_pbill($id){
+
+    		
+			$this->db->where('pbills_id',$id);
+			 $this->db->delete('pbills');
+			 return true;
+		
+		}
 
 
 

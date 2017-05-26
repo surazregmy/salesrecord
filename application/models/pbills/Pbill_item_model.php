@@ -158,6 +158,13 @@
 		return true;
 	
 		}
+
+	 public function delete_pbill_item($id ){
+	        
+	        $this->db->where('pbills_id',$id);
+	        $this->db->delete('pbills_items');
+	        return true;
+    	}
 }
 
 ?>

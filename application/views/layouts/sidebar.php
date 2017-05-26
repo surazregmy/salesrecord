@@ -55,7 +55,7 @@
            </ul>
         </li>
     
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-th"></i>
             <span>Purchase Bills</span>
@@ -64,7 +64,7 @@
              </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>pbills/pbills/view"><i class="fa fa-circle-o"></i> View Purchase Bills</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>pbills/pbills/view"><i class="fa fa-circle-o"></i> View Purchase Bills</a></li>
             <li><a href="<?php echo base_url(); ?>pbills/pbills/addpbills"><i class="fa fa-circle-o"></i> Add Purchase Bills</a></li>
            </ul>
         </li>

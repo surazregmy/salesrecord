@@ -111,6 +111,16 @@
 		
 		}
 
+		public function deletepbills($id){
+			
+			$this->pbill_model->delete_pbill($id);
+			$this->pbill_item_model->delete_pbill_item($id);
+			redirect('pbills/view');
+		
+		}
+
+
+
 
 	}
 ?>
