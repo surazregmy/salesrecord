@@ -133,5 +133,9 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
+<<<<<<< HEAD
 $autoload['model'] = array('items/item_model','debtors/debtor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model');
+=======
+$autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model');
+>>>>>>> 9448ded4090e383383621b02aa85205fcd1516f2
 
