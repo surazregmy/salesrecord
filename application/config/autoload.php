@@ -136,6 +136,6 @@ $autoload['language'] = array();
 
 $autoload['model'] = array('items/item_model','debtors/debtor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model');
 
-$autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model');
+$autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model');
 
 
