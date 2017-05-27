@@ -106,10 +106,24 @@
                 </tbody>
 
               </table>
-              <?php echo form_open('pbills/pbills/editpbills/'.$pbills_items[0]['pbills_id']); ?>
-              <input type="hidden" name="pbills_id" value="<?php echo  $pbills_items[0]['pbills_id'] ; ?>">
-              <input type="submit" name="" class="form-group btn btn-primary" value="Edit">
-              <?php echo form_close() ?>
+
+               <div class=" col-xs-1">
+
+                  <?php echo form_open('pbills/pbills/view') ?>
+                      <input class="form-group btn btn-primary pull-middle" type="submit" name="Done" value="Done">
+                  <?php echo form_close() ?>
+              </div>
+
+              <div class="col-xs-1">
+                  <?php echo form_open('pbills/pbills/editpbills/'.$pbills_items[0]['pbills_id']); ?>
+                  <input type="hidden" name="pbills_id" value="<?php echo  $pbills_items[0]['pbills_id'] ; ?>">
+                  <input type="submit" name="" class="form-group btn btn-primary" value="Edit">
+                  <?php echo form_close() ?>
+
+              </div>
+
+             
+              
         </div>
    </div>
         <!-- /.col -->
