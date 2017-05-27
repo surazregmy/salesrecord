@@ -92,7 +92,7 @@
                   <label  class="col-sm-3 control-label">Entered By:</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="entered_by" value="<?php echo $pbills_items[0]['entered_by'] ?>" >
+                    <input type="number" class="form-control" name="entered_by" value="<?php echo $pbills_items[0]['entered_by'] ?>" >
                   </div>
                 </div>
 
@@ -100,6 +100,13 @@
               <!-- /.box-body -->
 
          </div>  
+      </div>
+      <div class="col-sm-6">
+          
+
+                  <div class="col-sm-4">
+                    <input type="text"  class="form-control " name="total_amount" id="total_amount" value="<?php echo $pbills_items[0]['total_amount'] ?>" >
+                  </div>    
       </div>
     
 

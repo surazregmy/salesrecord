@@ -222,18 +222,7 @@
 
 <script src="<?php echo base_url(); ?>assets/plugins/select2/select2.full.min.js"></script>
 
-<script type="text/javascript">
 
-
-  var complex = '<?php echo json_encode($items); ?>';  // The encode data is in string
-  var o = JSON.parse(complex);  // Parse to Json Object 
-  //alert(complex);
-  //alert(o[0].items_id);
-
-
-
-
- </script>
 
 <script>
   $(function () {
@@ -253,95 +242,39 @@
 
       $(".select2").select2();
 
-      $(function(){
-        $('#add').click(function(){  
-            addnewrow();
-        }); 
+         $(document).ready(function() {
 
-        $('body').delegate('.remove','click',function(){  
-           $(this).parent().parent().remove();  
-         }); 
+               $('.formdebtor').change(function () {
+                    var optionObj = document.getElementById("debt");
+                    var debtors_id = optionObj.options[optionObj.selectedIndex].value;
+                    //alert(debtors_id);
+                    // var c = "<?php echo base_url();?>";
+                    // var d= "<?php echo site_url();?>";
+                    // alert(c);
+                    // alert(d);
 
-        $('body').delegate('.quantity,.rate,.total','keyup',function(){  
-          var tr=$(this).parent().parent();  
-          var qty=tr.find('.quantity').val();  
-          var price=tr.find('.rate').val();  
-            
-            
-          var amt =(qty * price);  
-          tr.find('.total').val(amt);  
-          grandtotal();  
-        });   
-      })
 
-      function grandtotal()  {  
-      var t=0;  
-      $('.total').each(function(i,e)   
-      {  
-      var amt =$(this).val()-0;  
-      t+=amt;  
-      });  
-      $('.grandtotal').html(t);  
-      $('#total_amount').val(t);
-      } 
+                    $.ajax({
+                    type : "POST",
+                    url : "<?php echo base_url();?>preports/showpreport",
+                    data : {id : debtors_id},
+                    success : function(msg){
+                      //alert(msg);
+                      $('#result').html(msg);
+                    },
+                    error : function(){
+                       alert(" data is not passed");
+                    }
 
-      function addnewrow(){  
-      
-          var n=($('.detail tr').length)+1; 
 
-          var count = Object.keys(o).length;
-         // alert(count);
-          
-         
-          var string ="";
-          var form_string = " class=\"form-control select2 \" style=\"width: 100%;\"";
+                   });
 
-          for(var i=0; i<count; i++){
-            string = string+'<option value = \" '+ o[i].items_id+'\"'+'>'+o[i].items_name+ '</option>'
-          }
-          //alert(string);
-          
-           var vartrk = '<tr>'+  
-          '<td class="no">'+n+'</td>'+  
-          '<td><select name =item'+n+form_string+'>'+ string +'</select></td>'+  
-          '<td><input type="text" min=0  name="quantity'+n+'" class="quantity"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="rate'+n+'" class="rate"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="total'+n+'" class="total"></td>'+ 
-          '<td><a href="#" class="remove">Delete</td>'  
-            
-          '</tr>';  
 
-           var vartr = '<tr>'+  
-          '<td class="no">'+n+'</td>'+  
-          '<td><select '+form_string+'>'+ string +'</select></td>'+  
-          '<td><input type="text" min=0  name="quantity3" class="quantity"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="rate3" class="rate"></td>'+  
-          '<td><input type="text" min=0 step = "0.0001"  name="total3" class="total"></td>'+ 
-          '<td><a href="#" class="remove">Delete</td>'  
-            
-          '</tr>';  
-           // $('.form').closest('.table').children('.detail').append(vartr)
-            $('.detail').append(vartrk); 
 
-            //var par = $('.myform');
-           // $(par).append(vartrk); 
-
-            // This is the one to load the select2 bootstrap plugin again
-            // It is also necessary to load the multiply function
-            $(document).ready(function() {
-                $(".select2").select2();
-
-                $('body').delegate('.quantity,.rate,.total','keyup',function(){  
-                  var tr=$(this).parent().parent();  
-                  var qty=tr.find('.quantity').val();  
-                  var price=tr.find('.rate').val();  
-                  var amt =(qty * price);  
-                  tr.find('.total').val(amt);  
-
-                 // total();  
-               });
+               });     
             });
-      }
+
+      
   </script>
 
 
