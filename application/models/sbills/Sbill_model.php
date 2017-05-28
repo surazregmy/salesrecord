@@ -8,7 +8,7 @@
 
 class Sbill_model extends CI_Model{
     public function __construct(){
-        $this->load->databse();
+        $this->load->database();
     }
 
     public function get_sbills($id = FALSE){

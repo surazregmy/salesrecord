@@ -54,7 +54,7 @@
                   <label  class="col-sm-3 control-label">Bill No :</label>
 
                   <div class="col-sm-9">
-                    <input type="number" class="form-control" name="pbill_no" required="required">
+                    <input type="number" class="form-control" name="sbill_no" required="required">
                   </div>
                 </div>
 

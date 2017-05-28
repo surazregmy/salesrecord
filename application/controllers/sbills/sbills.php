@@ -31,14 +31,14 @@ class Sbills extends CI_Controller {
 			$this->load->view('layouts/headh');
 			$this->load->view('layouts/sidebar');
 			$this->load->view('sbills/addsbills',$data);
-			$this->load->view('layouts/pbill_footer');
+			$this->load->view('layouts/sbill_footer');
     }
 
-    public function savesbills(){
+    public function save_sbill_item(){
     	// echo "<pre>";
     	// print_r($_POST);
     	// die;
-    	$sbills_id = $this->sbills_model->set_sbills();
+    	$sbills_id = $this->sbill_model->set_sbills();
     }
     public function viewsinglesbill($id){
 			$page = 'viewsinglesbill';
@@ -46,7 +46,7 @@ class Sbills extends CI_Controller {
 				show_404();
 			}
 
-		     $data['pbills_items'] = $this->sbill_item_model->get_singlesbill_from_join($id);
+		     $data['sbills_items'] = $this->sbill_item_model->get_singlesbill_from_join($id);
 		    // echo "<pre>";
 		    // print_r($data['pbills_items']);
 		    // die;
