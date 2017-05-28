@@ -75,6 +75,19 @@ $route['items/deleteitem/(:any)'] = 'items/items/deleteitem/$1';
 $route['pbills/view'] = 'pbills/pbills/view';
 $route['pbills/viewsinglepbill/(:any)'] = 'pbills/pbills/viewsinglepbill/$1';
 $route['pbills/addpbills'] = 'pbills/pbills/addpbills';
+$route['pbills/editpbills/(:any)'] = 'pbills/pbills/editpbills/$1';
+$route['pbills/deletepbills/(:any)'] = 'pbills/pbills/deletepbills/$1';
+
+
+$route['preceipts/view'] = 'preceipts/preceipts/view';
+$route['preceipts/addpreceipts'] = 'preceipts/preceipts/addpreceipts';
+$route['preceipts/savepreceipts'] = 'preceipts/preceipts/savepreceipts';
+$route['preceipts/editpreceipt/(:any)'] = 'preceipts/preceipts/editpreceipt/$1';
+$route['preceipts/updatepreceipt'] = 'preceipts/preceipts/updatepreceipt';
+$route['preceipts/deletepreceipt/(:any)'] = 'preceipts/preceipts/deletepreceipt/$1';
+
+$route['preports/view'] = 'preports/preports/view';
+$route['preports/showpreport'] = 'preports/preports/showpreport';
 
 
 

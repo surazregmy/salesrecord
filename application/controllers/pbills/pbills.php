@@ -35,7 +35,9 @@
 			
 		}
 		public function savepbills(){
-			
+			// echo "<pre>";
+			// print_r($_POST);
+			// die;
 			$pbill_id =$this->pbill_model->set_pbill();
 			$this->pbill_item_model->set_pbill_item($pbill_id);
 			redirect('pbills/view');

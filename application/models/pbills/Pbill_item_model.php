@@ -15,7 +15,7 @@
 
 			// Slice is the array slice that gives element in ith index
 
-			for ($i=4; $i < count($_POST); $i+=4) { 
+			for ($i=5; $i < count($_POST); $i+=4) { 
 				$one_row = array_slice($_POST,$i,4);
 			
 				if (!(in_array(null, $one_row))) {
@@ -55,19 +55,19 @@
 	            // $query = $this->db->get('pbills');
 	            // return $query->result_array();
 
-	        	$query = $this->db->query('SELECT  pbills_id, original_id, name, purchase_date, entered_by, status, items_name, quantity, price, total from ((pbills  NATURAl JOIN pbills_items) NATURAL JOIN items) JOIN debtors on debtors_id = debtors.id ');
+	        	$query = $this->db->query('SELECT  pbills_id, original_id, name, purchase_date, entered_by, status, items_name, quantity, price, total, total_amount from ((pbills  NATURAl JOIN pbills_items) NATURAL JOIN items) JOIN debtors on debtors_id = debtors.id ');
 	          	    return $query->result_array();
 
 
 	        }
-				$query = $this->db->query('SELECT  pbills_id, original_id, name, purchase_date, entered_by, status, items_name, quantity, price, total from ((pbills  NATURAl JOIN pbills_items) NATURAL JOIN items) JOIN debtors on debtors_id = debtors.id where pbills_id='.$id);
+				$query = $this->db->query('SELECT  pbills_id, original_id, name, purchase_date, entered_by, status, items_name, quantity, price, total, total_amount from ((pbills  NATURAl JOIN pbills_items) NATURAL JOIN items) JOIN debtors on debtors_id = debtors.id where pbills_id='.$id);
 	          	    return $query->result_array();
     	}
 
     public function update_pbill_item($pbill_id){
 
     	
-			$starting_index_for_row = ($_POST['no_of_rows'] + 5)+1;
+			$starting_index_for_row = ($_POST['no_of_rows'] + 6)+1;
 			//echo "<pre>";
 			//print_r($_POST);
 
@@ -94,7 +94,7 @@
 			
 
 			$added_rows = $current_no_of_rows - $_POST['no_of_rows'];
-		 	$first_range = 6+$_POST['no_of_rows']+$_POST['no_of_rows']*4;
+		 	$first_range = 7+$_POST['no_of_rows']+$_POST['no_of_rows']*4;
 		 	//echo "First range= ".$first_range."   ";
 		 
 
@@ -124,7 +124,7 @@
 						);
 
 					$query = "pbills_id = ".$pbill_id." AND items_id=".$_POST[$hidden_item];
-					echo $query;
+					//echo $query;
 					$this->db->where($query);
 					$this->db->update('pbills_items',$data);
 					$j++;
@@ -136,12 +136,13 @@
 
 			}
 
+
 			for($l = $first_range; $l<count($_POST); $l+=4){
 				$one_row = array_slice($_POST,$l,4);
 				if (!(in_array(null, $one_row))) {
 					$k = array_keys($one_row);
    					echo "<pre>";
-   					print_r($one_row);
+   					//print_r($one_row);
 
 					$data = array(
 							'pbills_id'=> $pbill_id,

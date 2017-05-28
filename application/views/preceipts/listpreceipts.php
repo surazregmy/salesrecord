@@ -26,27 +26,35 @@
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Debtors_ID</th>
-                  <th>Name</th>
-                  <th>Address</th>
-                  <th>Contact</th>
+                  <th>S.N</th>
+                  <th>PReceipt No</th>
+                  <th>Debtors</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Entered By</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $i =0;?>
-                <?php foreach($debtors as $debtor): ?>
-                  <?php $i++; ?>
+                <?php $i = 0;?>
+                <?php foreach($preceipts as $preceipt): ?>
+                    <?php  $i++ ?>
                  <tr>
-                    <td><?php echo $i;?></td>
-                    <td><?php echo $debtor['name']; ?></td>
-                    <td><?php echo $debtor['address']; ?></td>
-                    <td> <?php echo $debtor['contact']; ?></td>
+<!--                    <td>--><?php //echo $item['items_id']; ?><!--</td>-->
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $preceipt['po_id']; ?></td>
+                    <td><?php echo $preceipt['debtors_id']; ?></td>
+                    <td> <?php echo $preceipt['date']; ?></td>
+                    <td><?php echo $preceipt['amount']; ?></td>
+                    <td><?php echo $preceipt['entered_by']; ?></td>
                     
-                    <td><a href='editdebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='deletedebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
-
+                    
+                    <td><a href='editpreceipt/<?php echo $preceipt['preceipts_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
+                    <td><a href='deletepreceipt/<?php echo $preceipt['preceipts_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    
                   </tr>
-                <?php endforeach?>
+                <?php endforeach?>  
                 
               </table>
 

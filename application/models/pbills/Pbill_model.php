@@ -16,7 +16,8 @@
 					'debtors_id' =>$this->input->post('debtor_id'),
 					'purchase_date' =>$this->input->post('pdate'),
 					'entered_by' =>$this->input->post('entered_by'),
-					'status' => $this->input->post('entered_by'),
+					'total_amount'=>$this->input->post('total_amount'),
+					'status' => $this->input->post('entered_by')
 				);
 			 $this->db->insert('pbills',$data);
 			 return $insert_id = $this->db->insert_id();
@@ -41,6 +42,7 @@
 					'debtors_id' =>$this->input->post('debtor_id'),
 					'purchase_date' =>$this->input->post('pdate'),
 					'entered_by' =>$this->input->post('entered_by'),
+					'total_amount'=>$this->input->post('total_amount'),
 					'status' => $this->input->post('entered_by'),
 				);
 			$this->db->where('pbills_id',$id);
@@ -57,6 +59,8 @@
 		
 		}
 
+
+		
 
 
 

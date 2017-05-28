@@ -41,14 +41,15 @@
 
                   <div class="col-sm-9">
                     <select name = "debtor_id" class="form-control select2">
+                          <option disabled selected>Select your option</option>
                        <?php foreach($debtors as $debtor): ?>
                                   <option value="<?php echo $debtor['id'] ?>"><?php echo $debtor['name'];?></option>
                                   
                         <?php endforeach ?>
                     </select>
 
-                  </div>
                 </div>
+              </div>
 
                 <div class="form-group">
                   <label  class="col-sm-3 control-label">Bill No :</label>
@@ -81,14 +82,26 @@
                   <div class="col-sm-9">
                     <input type="text" class="form-control" name="entered_by" value="SURAJ" >
                   </div>
-                </div>
+              </div>
 
                 
               <!-- /.box-body -->
 
          </div>  
+        </div>
+
+        <!-- This is hidden for total amount -->
+      <div class="col-sm-6">
+          
+
+                  <div class="col-sm-4">
+                    <input type="hidden"  class="form-control " name="total_amount" id="total_amount" >
+                  </div>    
       </div>
     
+      </div>
+
+      
      
       <div class="row">
         <div class="col-xs-12 table-responsive">
@@ -170,6 +183,7 @@
       <div class="row no-print">
         <div class="col-xs-12">
           <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a> 
+
         </div>
       </div>
     </section>
