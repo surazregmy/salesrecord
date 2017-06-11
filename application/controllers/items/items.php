@@ -8,7 +8,11 @@
 			if(!file_exists(APPPATH.'views/items/'.$page.'.php')){
 				show_404();
 			}
-			
+		
+			if(!$this->session->userdata('logged_in')){
+				redirect('/');
+			}
+
 			$data['title'] = ucfirst($page);
 			$data['items'] = $this->item_model->get_items();
 			

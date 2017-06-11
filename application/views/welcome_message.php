@@ -1,35 +1,66 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html>
-	<head>
-	<link rel="stylesheet" href="assets/bootstrap/css/login.css" type="text/css" />	
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css" />	
-	</head>
-<body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Salesrecord</h1>
-            <div class="account-wall">
-                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                    alt="">
-                <form class="form-signin" method="post" action="items/items/view">
-                <input type="text" class="form-control" placeholder="username" required autofocus>
-                <input type="password" class="form-control" placeholder="Password" required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    Sign in</button>
-                <label class="checkbox pull-left">
-                    <input type="checkbox" value="remember-me">
-                    Remember me
-                </label>
-                <!--<a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>-->
-                </form>
-            </div>
-            <!--<a href="#" class="text-center new-account">Create an account </a>-->
-        </div>
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  
+  
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/login.css">
+  
+</head>
+
+<body>
+  <html lang="en-US">
+<head>
+  <meta charset="utf-8">
+    <title>Login</title>
+    
+   
+
+</head>
+
+
+
+    <div id="photo">
+
+        <img id = "myphoto" src="<?php echo base_url(); ?>assets/dist/img/shiva.jpg" style="float: center">
     </div>
-</div>
+    <div id="namepasal">
+      <h2  id ="myheading" style="float: center"><font color="white">ईश्वर प्लम्बिङ सेवा </font></h2>
+    </div>
+  
+
+    <div id="login">
+        
+      
+      <?php echo form_open('users/login'); ?>
+
+        <span class="fontawesome-user"></span>
+          <input type="text" name="username" placeholder="Username" class="form-control">
+       
+        <span class="fontawesome-lock"></span>
+          <input type="password" name ="password" placeholder="Password" class="form-control">
+        
+        <input type="submit" value="Login">
+    <?php echo form_close(); ?>
+
+    <div id="valerror">
+          <p><font color="white"> <?php echo validation_errors(); ?></font> </p>
+       
+    </div>
+    <?php if($this->session->flashdata('login_failed')): ?>
+    <div id="valerror">
+          <p><font color="white"> <?php echo $this->session->flashdata('login_failed'); ?></font> </p>
+       
+    </div>
+     <?php endif ?>
+
+
+   </div>
+    
+
+  
+  
 </body>
 </html>

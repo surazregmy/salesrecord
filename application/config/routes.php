@@ -90,6 +90,12 @@ $route['preports/view'] = 'preports/preports/view';
 $route['preports/showpreport'] = 'preports/preports/showpreport';
 
 
+$route['users/login'] = 'users/users/login';
+
+
+
+
+
 
 
 $route['404_override'] = '';

@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('form_validation');
+$autoload['libraries'] = array('form_validation','session');
 
 /*
 | -------------------------------------------------------------------
@@ -136,6 +136,6 @@ $autoload['language'] = array();
 
 $autoload['model'] = array('items/item_model','debtors/debtor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model');
 
-$autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model','preports/preport_model');
+$autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model','preports/preport_model','users/user_model');
 
 
