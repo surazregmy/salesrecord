@@ -262,13 +262,15 @@
            $(this).parent().parent().remove();  
          }); 
 
-        $('body').delegate('.quantity,.rate,.total','keyup',function(){  
+        $('body').delegate('.quantity,.rate,.total,.discount','keyup',function(){  
           var tr=$(this).parent().parent();  
           var qty=tr.find('.quantity').val();  
           var price=tr.find('.rate').val();  
+          var discount = tr.find('.discount').val();
+          var discount_price = price - (discount/100) * price;
             
             
-          var amt =(qty * price);  
+          var amt =(qty * discount_price);  
           tr.find('.total').val(amt);  
           grandtotal();  
         });   
@@ -305,8 +307,9 @@
           '<td><select name =item'+n+form_string+'>'+ string +'</select></td>'+  
           '<td><input type="text" min=0  name="quantity'+n+'" class="quantity"></td>'+  
           '<td><input type="text" min=0 step = "0.0001"  name="rate'+n+'" class="rate"></td>'+  
+          '<td><input type="text" min=0 max=100 step = "0.0001"  name="discount'+n+'" class="discount"></td>'+ 
           '<td><input type="text" min=0 step = "0.0001"  name="total'+n+'" class="total"></td>'+ 
-          '<td><a href="#" class="remove">Delete</td>'  
+          '<td><a href="#" class="remove">D</td>'  
             
           '</tr>';  
 
@@ -341,6 +344,8 @@
             });
       }
   </script>
+
+
 
 
 </body>

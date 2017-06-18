@@ -1,294 +1,197 @@
-<!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+
+ <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        This is itemlist
-      </h1>
+     <h4>S bills Add</h4>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+        <li><a href="#">Sbills</a></li>
+        <li class="active">Add Sbills</li>
       </ol>
     </section>
 
     <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="box">
-        
-        <div class="box-body">
-          <h2> This is the item list </h2>
-         
-         <?php foreach($items as $item): ?>
-            <h3><?php echo $item['items_name']; ?> </h3>
-         <?php endforeach?>
-
-
-        </div>
-        <!-- /.box-footer-->
-      </div>
-      <!-- /.box -->
-
-<!-- this  is the data table previous-->
-
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Stock List
-        <small>Items Details</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
+    <section class="invoice">
+      <!-- title row -->
+      <section class="invoice">
+      <!-- title row -->
       <div class="row">
         <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Item Table</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Items ID</th>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Quantity</th>
-                  <th>BP</th>
-                  <th>SP</th>
-                  <th>Discount</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
+          <h5 class="page-header">
+            <i class="fa fa-globe"></i>बिक्री बिल 
+            <small class="pull-right"> <b> <?php echo(date("Y/m/d"))?> </b> </small>
+          </h5>
+        </div>
+        <!-- /.col -->
+      </div>
+
+<?php $attributes = array('class' => 'form-horizontal myform'); ?>
+      <?php echo form_open('sbills/sbills/savesbills', $attributes); ?>
+
+      <div class="row invoice-info">
+        <div class="col-sm-8 invoice-col">
+          <!-- <form class="form-horizontal"> -->
+
+
+              <div class="box-body">
+
+                <div class="form-group">
+                  <label  class="col-sm-3 control-label">Creditors Name :</label>
+
+                  <div class="col-sm-9">
+                    <select name = "creditor_id" class="form-control select2">
+                       <?php foreach($creditors as $creditor): ?>
+                                  <option value="<?php echo $creditor['cid'] ?>"><?php echo $creditor['creditor_name'];?></option>
+                                  
+                        <?php endforeach ?>
+                    </select>
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label  class="col-sm-3 control-label">Bill No :</label>
+
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" name="sbill_no" required="required">
+                  </div>
+                </div>
 
                 
-                <?php foreach($items as $item): ?>
-                 <tr>
-                    <td><?php echo $item['items_id']; ?></td>
-                    <td><?php echo $item['items_name']; ?></td>
-                    <td><?php echo $item['items_category']; ?></td>
-                    <td> <?php echo $item['items_quantity']; ?></td>
-                    <td><?php echo $item['items_cp']; ?></td>
-                    <td><?php echo $item['items_sp']; ?></td>
-                    <td><?php echo $item['items_dp']; ?></td>
-                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/delete_icon.png" height="25" width="25"></td>
-                    
-                  </tr>
-                <?php endforeach?>  
-                
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-    </section>
-    <!-- /.content -->
-  </div>
+
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Sales Date:</label>
+
+                  <div class="col-sm-9">
+                  <div class="input-group date ">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="date" name="sdate" class="form-control pull-right" id="datepicker" required="required">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                  <label  class="col-sm-3 control-label">Type:</label>
+
+                  <div class="col-sm-9">
+                    <select name = "creditor_id" class="form-control select2">
+                      <option>Credit</option>
+                      <option>Cash</option>
+                      <option>Half Paid</option>
+                    </select>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label  class="col-sm-3 control-label">Entered By:</label>
+
+                  <div class="col-sm-9">
+                    <input type="hidden"  class="form-control" name="entered_by" value="<?php echo(ucfirst($this->session->userdata('username'))); ?>" >
+                    <input type="text" disabled="disabled"  class="form-control" name="entered_by" value="<?php echo(ucfirst($this->session->userdata('username'))); ?>" >
+                  </div>
+              </div>
 
 
-
-  <table id="example1" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Items ID</th>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Quantity</th>
-                  <th>BP</th>
-                  <th>SP</th>
-                  <th>Discount</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach($items as $item): ?>
-                 <tr>
-                    <td><?php echo $item['items_id']; ?></td>
-                    <td><?php echo $item['items_name']; ?></td>
-                    <td><?php echo $item['items_category']; ?></td>
-                    <td> <?php echo $item['items_quantity']; ?></td>
-                    <td><?php echo $item['items_cp']; ?></td>
-                    <td><?php echo $item['items_sp']; ?></td>
-                    <td><?php echo $item['items_dp']; ?></td>
-                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='delete_user.php?user_id={$userSet['user_id']}'><img src="<?php echo base_url(); ?>assets/dist/img/delete_icon.png" height="25" width="25"></td>
-                    
-                  </tr>
-                <?php endforeach?>  
-                
-              </table>
-
-
----------
-<?php foreach($pbills as $pbill): ?>
-                    
-                 <tr>
-                   
-                    <td><?php echo $pbill['pbills_id']; ?></td>
-                    <td><?php echo $pbill['original_id']; ?></td>
-                    <td><?php echo $pbill['debtors_id']; ?></td>
-                    <td> <?php echo $pbill['purchase_date']; ?></td>
-                    <td><?php echo $pbill['entered_by']; ?></td>
-                    <td><?php echo $pbill['status']; ?></td>
-                   
-                    <td><a href='edititem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='deleteitem/<?php echo $item['items_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
-                    
-                  </tr>
-                <?php endforeach?> 
-
-                ---------------------------------------------------------------------
-  <?php if($data['pbills_items'][0]['name'] == $debtor['name']) : ?>
-                            <option value="<?php echo $debtor['id'] ?>"><?php echo "HIK";?></option>
-                          <?php else: ?>
-                                  <option value="<?php echo $debtor['id'] ?>"><?php echo "Hi";?></option>     
-  <?php endif ?>
-
-
-
-
-        
-
-  //    for ($i=$starting_index_for_row; $i < count($_POST); $i+=4) { 
-
-      
-  //      $one_row = array_slice($_POST,$i,4);
-
-  //      if($current_no_of_rows == $_POST['no_of_rows']){
-      
-  //          if (!(in_array(null, $one_row))) {
-
-  //            $hidden_item = "hid_itemid".$j;
-
-  //              $k = array_keys($one_row);
-  //              echo "<pre>";
-  //              print_r($one_row);
 
                 
-  //            $data = array(
-  //                'pbills_id'=> $pbill_id,
-  //                'items_id' =>$one_row[$k[0]],
-  //                'quantity' =>$one_row[$k[1]],
-  //                 'price' =>$one_row[$k[2]],
-  //                 'total' =>$one_row[$k[3]]
-  //              );
+              <!-- /.box-body -->
 
-  //            $query = "pbills_id = ".$pbill_id." AND items_id=".$_POST[$hidden_item];
-  //            echo $query;
-  //            $this->db->where($query);
-  //            $this->db->update('pbills_items',$data);
-  //            $j++; 
-  //          }
-
- //         }
- //       else{
-              
-
-
-  //        for ($i=$starting_index_for_row; $i < $first_range; $i+=4) {
-
-  //              $one_row = array_slice($_POST,$i,4);
-
-  //            if($current_no_of_rows == $_POST['no_of_rows']){
-      
-  //              if (!(in_array(null, $one_row))) {
-
-  //                $hidden_item = "hid_itemid".$j;
-
-  //                  $k = array_keys($one_row);
-  //                  echo "<pre>";
-  //                  print_r($one_row);
-
-                    
-  //                $data = array(
-  //                    'pbills_id'=> $pbill_id,
-  //                    'items_id' =>$one_row[$k[0]],
-  //                    'quantity' =>$one_row[$k[1]],
-  //                     'price' =>$one_row[$k[2]],
-  //                     'total' =>$one_row[$k[3]]
-  //                  );
-
-  //                $query = "pbills_id = ".$pbill_id." AND items_id=".$_POST[$hidden_item];
-  //                echo $query;
-  //                $this->db->where($query);
-  //                $this->db->update('pbills_items',$data);
-  //                $j++; 
-  //              }
-  //            }
-  //        }
-
-  //        for ($i=$first_range; $i <count($_POST) ; $i+=4) {
-
-  //          $one_row = array_slice($_POST,$i,4);
-      
-  //          if (!(in_array(null, $one_row))) {
-  //              $k = array_keys($one_row);
-
-  //            $data = array(
-  //                'pbills_id'=> $pbill_id,
-  //                'items_id' =>$one_row[$k[0]],
-  //                'quantity' =>$one_row[$k[1]],
-  //                 'price' =>$one_row[$k[2]],
-  //                 'total' =>$one_row[$k[3]]
-  //              );
-  //            echo "<pre>";
-  //            print_r($data);
-  //            $this->db->insert('pbills_items',$data);
-          
- //                  }
-
-  //             }
-
-
-  //          }
-
+         </div>  
+      </div>
     
+     
+      <div class="row">
+        <div class="col-xs-12 ">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>SN</th>
+              <th>Items Name</th>
+              <th>Quantity</th>
+              <th>Rate</th>
+              <th>Discount</th>
+              <th>Total<?php echo(str_repeat('&nbsp;',18)); ?><input type="button" value="+" id="add" class="btn btn-primary"></th>
+             
+            </tr>
+            </thead>
+            <tbody class="detail">
+
+            <tr >
+              <td>1</td>
+              <td >
+                   <select name = "item1" class="select2" style="width: 100%;">
+                       <?php foreach($items as $item): ?>
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>          
+                        <?php endforeach ?>
+                    </select>
+              </td>
+              <td><input type="text"  name="quantity1" class="quantity"></td>
+              <td><input type="text"  name="rate1" class="rate"></td>
+              <!-- <td><input type="text"  name="discount1" class="discount"></td> -->
+              <td><input type="text"  name="total1" class="total"></td>
+              </form>
+            </tr>
 
 
-    <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
+            <tr>
+              <td>2</td>
+              <td>
+                   <select name = "item2" class="select2" style="width: 100%;">
+                       <?php foreach($items as $item): ?>
+                                  <option value="<?php echo $item['items_id'] ?>"><?php echo $item['items_name'];?></option>          
+                        <?php endforeach ?>
+                    </select>
+              </td>
+              <td><input type="text"  name="quantity2" class="quantity"></td>
+              <td><input type="text"  name="rate2" class="rate"></td>
+              <td><input type="text"  name="discount1" class="discount"></td>
+              <td><input type="text"  name="total2" class="total"></td>
+              </form>
+            </tr>
+            
+
+            <tfoot>
                 <tr>
-                  <th>Debtors_ID</th>
-                  <th>Name</th>
-                  <th>Address</th>
-                  <th>Contact</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th></th>
+                  <th> <input type="submit" name="" class="form-group btn btn-primary" value="Submit"></th>
+                  <th></th>
+                  <th>Grand Total</th>
+                  <th class="grandtotal"></th>
                 </tr>
-                </thead>
-                <tbody>
-                <?php $i =0;?>
-                <?php foreach($debtors as $debtor): ?>
-                  <?php $i++; ?>
-                 <tr>
-                    <td><?php echo $i;?></td>
-                    <td><?php echo $debtor['name']; ?></td>
-                    <td><?php echo $debtor['address']; ?></td>
-                    <td> <?php echo $debtor['contact']; ?></td>
-                    
-                    <td><a href='editdebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='deletedebtor/<?php echo $debtor['id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+            </tfoot>
 
-                  </tr>
-                </tbody>
-                <?php endforeach?>
-                
-              </table>
 
-            </div>
+
+            
+            </tbody>
+          </table>
+        </div>
+        <!-- /.col -->
+      </div>
+
+      <!-- /.row -->
+       </div>
+
+
+<?php echo form_close(); ?>
+  
+
+
+     
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a> 
+        </div>
+      </div>
+    </section>
+   
+    <div class="clearfix"></div>
+  
+</div>
+

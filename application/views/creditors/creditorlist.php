@@ -27,6 +27,8 @@
                   <th>Creditor Name</th>
                   <th>Creditor Address</th>
                   <th>Creditor Contact</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,8 +41,8 @@
                     <td><?php echo $creditor['creditor_address']; ?></td>
                     <td> <?php echo $creditor['creditor_contact']; ?></td>
                     
-                    <td><a href='creditors/editcreditor/<?php echo $creditor['cid']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='creditors/deletecreditor/<?php echo $creditor['cid']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    <td><a href='creditors/editcreditor/<?php echo $creditor['cid']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="20" width="20"></td>
+                    <td><a href='creditors/deletecreditor/<?php echo $creditor['cid']; ?>' onclick="return confirm('डिलिट गर्ने हो ?');"><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="20" width="20"></td>
 
                   </tr>
                 <?php endforeach?>

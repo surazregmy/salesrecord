@@ -39,7 +39,7 @@
              </span>
           </a>
           <ul class="treeview-menu">
-            <li id="viewdebtors"><a  href="<?php echo base_url(); ?>debtors/debtors/view"><i class="fa fa-circle-o"></i> View Debtors</a></li>
+            <li id="viewdebtors"><a  href="<?php echo base_url(); ?>debtors/debtors/view "><i class="fa fa-circle-o"></i> View Debtors</a></li>
             <li id="adddebtors"><a href="<?php echo base_url(); ?>debtors/debtors/adddebtor"><i class="fa fa-circle-o"></i> Add Debtors</a></li>
            </ul>
         </li>
@@ -97,7 +97,7 @@
           </a>
           <ul class="treeview-menu">
             <li id="viewsbill"><a href="../forms/general.html"><i class="fa fa-circle-o"></i>View Sale Bill</a></li>
-            <li id="addsbill"><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Add Sale Bill</a></li>
+            <li id="addsbill"><a href="<?php echo base_url(); ?>sbills/addsbills ""><i class="fa fa-circle-o"></i> Add Sale Bill</a></li>
           </ul>
         </li>
     

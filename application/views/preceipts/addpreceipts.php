@@ -86,6 +86,7 @@
                   <label  class="col-sm-3 control-label">Entered By:</label>
 
                   <div class="col-sm-9">
+                   <input type="hidden" class="form-control" name="entered_by" value="<?php echo ucfirst($this->session->userdata('username')); ?>" >
                    <input type="text" disabled ="disabled" class="form-control" name="entered_by" value="<?php echo ucfirst($this->session->userdata('username')); ?>" >
                   </div>
               </div>  
