@@ -65,6 +65,7 @@ $route['creditors/deletecreditor/(:any)'] = 'creditors/creditors/deletecreditor/
 
 $roue['sbills/view'] = ['sbills/sbills/view'];
 $route['sbills/addsbills'] = 'sbills/sbills/addsbills';
+$route['sbills/savesbills'] = 'sbills/sbills/savesbills';
 
 
 $route['items/view'] = 'items/items/view';

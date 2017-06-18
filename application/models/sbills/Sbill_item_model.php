@@ -1,9 +1,3 @@
-/**
- * Created by PhpStorm.
- * User: Roshan
- * Date: 5/27/2017
- * Time: 7:24 AM
- */
 
 <?php
 	class Sbill_item_model extends CI_Model{
@@ -12,7 +6,7 @@
 			$this->load->database();
 		}
 
-		public function set_sbills_item($sbill_id){
+		public function set_sbill_item($sbill_id){
 			// echo (count($_POST));
 			for ($i=4; $i < count($_POST); $i+=4) { 
 				$one_row = array_slice($_POST,$i,4);

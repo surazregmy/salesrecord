@@ -273,7 +273,26 @@
           var amt =(qty * discount_price);  
           tr.find('.total').val(amt);  
           grandtotal();  
-        });   
+        }); 
+
+        $('body').delegate('.quantity,.rate,.total,.discount,.grandtotal,.final_discount,.grandtotal_discounted','keyup',function(){ 
+          // alert("Hi"); 
+          var tr=$(this).parent().parent();  
+          var final_discount=tr.find('.final_discount').val();  
+         // alert(final_discount);
+          var grandtotal= $('.grandtotal').html();
+         // alert(grandtotal);
+
+          var grandtotal_discount = grandtotal - final_discount; 
+        //  alert(grandtotal_discount) 
+          $('.grandtotal_discounted').html(grandtotal_discount);  
+          $('#discounted_total').val(grandtotal_discount);
+          
+        }); 
+
+
+
+
       })
 
       function grandtotal()  {  
@@ -284,6 +303,7 @@
       t+=amt;  
       });  
       $('.grandtotal').html(t);  
+      $('#total_amount').val(t);
       } 
 
       function addnewrow(){  
@@ -341,9 +361,52 @@
                   tr.find('.total').val(amt);  
                  // total();  
                });
+                
+
             });
       }
   </script>
+
+
+  <script type="text/javascript">
+
+
+ $(".treeview-menu li ").click(function () {
+        var id = $(this).attr("id");
+        var  parent = $('#' + id).parent().parent().parent().find(".active").attr("id");
+    
+       // $('#'+parent).siblings().find(".active").removeClass("active");
+       // $('#'+parent).addClass("active");
+        localStorage.setItem("selectedparent", parent);
+
+        $('#' + id).siblings().find(".active").removeClass("active");
+        $('#' + id).addClass("active");
+        localStorage.setItem("selectedolditem", id);
+
+  });
+
+   window.onload = function () {
+   // alert("Hiii");
+    var selectedparent = localStorage.getItem("selectedparent");
+    var selectedolditem = localStorage.getItem('selectedolditem');
+    if(selectedparent !=null){
+
+         var par = $('#' + selectedparent).parent().find(".active").attr("id");
+         $('#' + selectedparent).parent().find(".active").removeClass("active");
+         $('#' + selectedparent).addClass("active");
+
+        $('#' + selectedolditem).parent().find(".active").removeClass("active");
+        $('#' + selectedolditem).addClass("active");
+
+     }
+
+ };
+
+
+
+
+  
+</script>
 
 
 

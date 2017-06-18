@@ -34,6 +34,16 @@ class Sbills extends CI_Controller {
 			$this->load->view('layouts/sbill_footer');
     }
 
+    public function savesbills(){
+        // echo "<pre>";
+        // print_r($_POST);
+        // die;
+        $sbill_id =$this->sbill_model->set_sbill();
+        $this->sbill_item_model->set_sbill_item($sbill_id);
+        die("saved!");
+        redirect('pbills/view');
+    }
+
     public function save_sbill_item(){
     	// echo "<pre>";
     	// print_r($_POST);

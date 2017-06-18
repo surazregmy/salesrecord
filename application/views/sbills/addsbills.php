@@ -27,7 +27,7 @@
      
 
     <?php $attributes = array('class' => 'form-horizontal myform'); ?>
-            <?php echo form_open('pbills/pbills/savepbills', $attributes); ?>
+            <?php echo form_open('sbills/savesbills', $attributes); ?>
 
 <div class="row invoice-info">
         <div class="col-sm-9 invoice-col">
@@ -77,7 +77,7 @@
                   <label  class="col-sm-3 control-label">Type:</label>
 
                   <div class="col-sm-9">
-                    <select name = "creditor_id" class="form-control select2">
+                    <select name = "status" class="form-control select2">
                       <option>Credit</option>
                       <option>Cash</option>
                       <option>Half Paid</option>
@@ -100,14 +100,18 @@
          
        
 
+        <!-- This two are for hidden for total amount and grand-->
+
         <!-- This is hidden for total amount -->
       <div class="col-sm-6">
           
 
                   <div class="col-sm-4">
-                    <input type="hidden"  class="form-control " name="total_amount" id="total_amount" >
+                    <input type="text"  class="form-control " name="total_amount" id="total_amount" >
+                    <input type="text"  class="form-control " name="dicounted_total" id="discounted_total" >
                   </div>    
       </div>
+    
     
    
 
@@ -178,9 +182,9 @@
                   <th></th>
                   <th></th>
                   <th>Grand Total</th>
-                  <th class="grandtotal"></th>
+                  <th id = "gtotal" class="grandtotal"></th>
                   <th>Final Discount(Rs.)</th>
-                  <th><input type="text"  name="final_discount" class="total"></th>
+                  <th><input type="text"  name="final_discount" class="final_discount"></th>
                   
             </tr>
                 <tr>
@@ -188,8 +192,8 @@
                   <th> <input type="submit" name="" class="form-group btn btn-primary" value="Submit"></th>
                   <th></th>
                   <th></th>
-                  <th>Grand Total</th>
-                  <th class="grandtotal"></th>
+                  <th>Discounted Total</th>
+                  <th class="grandtotal_discounted"></th>
                 </tr>
             </tfoot>
 
