@@ -277,6 +277,43 @@
       
   </script>
 
+<script type="text/javascript">
+
+
+ $(".treeview-menu li ").click(function () {
+        var id = $(this).attr("id");
+        var  parent = $('#' + id).parent().parent().parent().find(".active").attr("id");
+    
+       // $('#'+parent).siblings().find(".active").removeClass("active");
+       // $('#'+parent).addClass("active");
+        localStorage.setItem("selectedparent", parent);
+
+        $('#' + id).siblings().find(".active").removeClass("active");
+        $('#' + id).addClass("active");
+        localStorage.setItem("selectedolditem", id);
+
+  });
+
+   window.onload = function () {
+   // alert("Hiii");
+    var selectedparent = localStorage.getItem("selectedparent");
+    var selectedolditem = localStorage.getItem('selectedolditem');
+    if(selectedparent !=null){
+
+         var par = $('#' + selectedparent).parent().find(".active").attr("id");
+         $('#' + selectedparent).parent().find(".active").removeClass("active");
+         $('#' + selectedparent).addClass("active");
+
+        $('#' + selectedolditem).parent().find(".active").removeClass("active");
+        $('#' + selectedolditem).addClass("active");
+
+     }
+
+ };
+
+  
+</script>
+
 
 </body>
 </html>

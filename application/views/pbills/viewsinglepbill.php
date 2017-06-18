@@ -2,26 +2,25 @@
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Invoice
-        <small>#007612</small>
-      </h1>
+      <h4>
+        खरिद बिल
+      </h4>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Invoice</li>
+        <li><a href="#">Pbills</a></li>
+        <li class="active">View Single Pbill</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="invoice">
       <!-- title row -->
-      <div class="row"> 
+     <div class="row">
         <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> AdminLTE, Inc.
-            <small class="pull-right">Date: 2/10/2014</small>
-          </h2>
+          <h5 class="page-header">
+            <i class="fa fa-globe"></i>खरिद बिल
+            <small class="pull-right"> <b> <?php echo(date("Y/m/d"))?> </b> </small>
+          </h5>
         </div>
         <!-- /.col -->
       </div>
@@ -100,6 +99,15 @@
 
                   
                 <?php endforeach?>  
+                <tfoot>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>Grand Total</th>
+                  <th class="grandtotal"><?php echo $pbills_items[0]['total_amount'] ?></th>
+                </tr>
+            </tfoot>
 
 
 

@@ -2,10 +2,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Data Tables
-        <small>advanced tables</small>
-      </h1>
+     <h3>साहु </h3>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Tables</a></li>
@@ -18,11 +15,11 @@
               <div class="col-xs-12">
                   <div class="box">
                       <div class="box-header">
-                          <h3 class="box-title">Add Items</h3>
+                          <h3 class="box-title">Edit Debtors</h3>
                       </div>
                       <!-- /.box-header -->
                       <div class="box-body">
-                          <p>Hello This is me Gentleman</p>
+                        
 
                           <?php echo form_open('debtors/debtors/updatedebtor'); ?>
                           <input type="hidden" name="id" value="<?php echo($debtor['id']);?>">

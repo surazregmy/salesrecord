@@ -133,13 +133,13 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-<<<<<<< HEAD
+
 $autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model','sbills/sbill_model');
-=======
+
 
 $autoload['model'] = array('items/item_model','debtors/debtor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model');
 
 $autoload['model'] = array('items/item_model','debtors/debtor_model','creditors/creditor_model','pbills/pbill_model','pbills/pbill_item_model','preceipts/preceipt_model','preports/preport_model','users/user_model');
 
->>>>>>> ef8efcba27f66b26e89ff978a355fc1c32dee5a8
+
 

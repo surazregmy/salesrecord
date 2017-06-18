@@ -2,14 +2,12 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Data Tables
-        <small>advanced tables</small>
-      </h1>
+    <div>  <h4>खरिद बिल </h4> </div>
+    
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="#">PBills</a></li>
+        <li class="active">View PBills</li>
       </ol>
     </section>
 
@@ -19,7 +17,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
+              <h3 class="box-title">Purchase Bills Lists</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -51,7 +49,7 @@
                   
                     
                     <td><a href='editpbills/<?php echo $pbill['pbills_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/edit_icon.png" height="25" width="25"></td>
-                    <td><a href='deletepbills/<?php echo $pbill['pbills_id']; ?>'><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
+                    <td><a href='deletepbills/<?php echo $pbill['pbills_id']; ?>' onclick="return confirm('डिलिट गर्ने हो ?');"><img src="<?php echo base_url(); ?>assets/dist/img/delete_iconr.png" height="25" width="25"></td>
                     
                   </tr>
                   <?php } ?> 

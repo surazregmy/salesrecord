@@ -2,13 +2,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Data Tables
-        <small>advanced tables</small>
-      </h1>
+     <h4>आसामी </h4>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
+        <li><a href="#">Creditors</a></li>
         <li class="active">Add Creditor</li>
       </ol>
     </section>
@@ -23,7 +20,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <p>Hello This is me Gentleman</p>
+          
 
               <?php echo form_open('creditors/creditors/addcreditor'); ?>
                 <table class="table table-bordered table-hover">

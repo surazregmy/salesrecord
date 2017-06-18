@@ -2,26 +2,24 @@
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Invoice
-        <small>#007612</small>
-      </h1>
+      <h4>खरिद पैसा भुक्तानी  </h4>
+       
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Invoice</li>
+        <li><a href="#">PReceipts</a></li>
+        <li class="active">Add Preceipts</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="invoice">
       <!-- title row -->
-      <div class="row">
+     <div class="row">
         <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> AdminLTE, Inc.
-            <small class="pull-right">Date: 2/10/2014</small>
-          </h2>
+          <h5 class="page-header">
+            <i class="fa fa-globe"></i>खरिद पैसा भुक्तानी 
+            <small class="pull-right"> <b> <?php echo(date("Y/m/d"))?> </b> </small>
+          </h5>
         </div>
         <!-- /.col -->
       </div>
@@ -88,7 +86,7 @@
                   <label  class="col-sm-3 control-label">Entered By:</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="entered_by" value="SURAJ" >
+                   <input type="text" disabled ="disabled" class="form-control" name="entered_by" value="<?php echo ucfirst($this->session->userdata('username')); ?>" >
                   </div>
               </div>  
 

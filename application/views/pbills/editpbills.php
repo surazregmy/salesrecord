@@ -1,27 +1,26 @@
 
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Invoice
-        <small>#007612</small>
-      </h1>
+     <section class="content-header">
+      <h4>
+        खरिद बिल
+      </h4>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Invoice</li>
+        <li><a href="#">Pbills</a></li>
+        <li class="active">Edit Pbills</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="invoice">
       <!-- title row -->
-      <div class="row">
+     <div class="row">
         <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> AdminLTE, Inc.
-            <small class="pull-right">Date: 2/10/2014</small>
-          </h2>
+          <h5 class="page-header">
+            <i class="fa fa-globe"></i>खरिद बिल
+            <small class="pull-right"> <b> <?php echo(date("Y/m/d"))?> </b> </small>
+          </h5>
         </div>
         <!-- /.col -->
       </div>
@@ -91,8 +90,11 @@
               <div class="form-group">
                   <label  class="col-sm-3 control-label">Entered By:</label>
 
+
+
                   <div class="col-sm-9">
-                    <input type="number" class="form-control" name="entered_by" value="<?php echo $pbills_items[0]['entered_by'] ?>" >
+                    <input type="text" disabled="disabled" class="form-control" name="entered_by" value="<?php echo ucfirst($pbills_items[0]['entered_by']) ?>" >
+                    <input type="hidden" class="form-control" name="entered_by" value="<?php echo $pbills_items[0]['entered_by'] ?>" >
                   </div>
                 </div>
 

@@ -16,11 +16,19 @@
 			$data['title'] = ucfirst($page);
 			$data['items'] = $this->item_model->get_items();
 			
+			
 
 			$this->load->view('layouts/headh');
 			$this->load->view('layouts/sidebar');
 			$this->load->view('items/'.$page, $data);
-			$this->load->view('layouts/footerh');
+			if($this->session->userdata('script_status') == 0){
+				$this->load->view('layouts/footer');
+				$this->session->set_userdata('script_status',1);
+			}
+			else{
+				$this->load->view('layouts/footerh');
+			}
+			
 			
 		}
 

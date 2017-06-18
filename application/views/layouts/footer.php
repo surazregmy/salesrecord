@@ -220,3 +220,25 @@
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+
+
+ $(".treeview-menu li ").click(function () {
+        var id = $(this).attr("id");
+        var  parent = $('#' + id).parent().parent().parent().find(".active").attr("id");
+    
+       // $('#'+parent).siblings().find(".active").removeClass("active");
+       // $('#'+parent).addClass("active");
+        localStorage.setItem("selectedparent", parent);
+
+        $('#' + id).siblings().find(".active").removeClass("active");
+        $('#' + id).addClass("active");
+        localStorage.setItem("selectedolditem", id);
+
+  });
+
+
+
+  
+</script>

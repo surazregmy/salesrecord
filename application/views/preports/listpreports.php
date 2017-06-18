@@ -2,29 +2,25 @@
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Invoice
-        <small>#007612</small>
-      </h1>
+       <h4> लेजर  </h4>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Invoice</li>
+        <li><a href="#">PReports</a></li>
+        <li class="active">Ledger</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="invoice">
-      <!-- title row -->
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> AdminLTE, Inc.
-            <small class="pull-right">Date: 2/10/2014</small>
-          </h2>
-        </div>
-        <!-- /.col -->
-      </div>
+       <div class="row">
+            <div class="col-xs-12">
+              <h5 class="page-header">
+                <i class="fa fa-globe"></i>लेजर 
+                <small class="pull-right"> <b> <?php echo(date("Y/m/d"))?> </b> </small>
+              </h5>
+            </div>
+            <!-- /.col -->
+          </div>
 
 
 
@@ -53,6 +49,16 @@
 
          </div>  
       </div>
+
+       <div class="row">
+          <div class="col-xs-12">
+            <h5 class="page-header">
+            </h5>
+          </div>
+
+        </div>
+
+
       <div class="row col-xs-12" id ="result">
       </div>
     

@@ -13,11 +13,13 @@ class Users extends CI_Controller
 			else
 			{
 				$check_user_exist =  $this->user_model->validate_user_exist();
+				
 				if($check_user_exist){
 					$user_data = array(
 							'user_id' => $check_user_exist['users_id'],
 							'username' =>$check_user_exist['username'],
-							'logged_in'=>TRUE
+							'logged_in'=>TRUE,
+							'script_status'=>0 //This is used for running script
 						);
 					$this->session->set_userdata($user_data);
 					redirect('items/view');
